@@ -1,59 +1,62 @@
-/* Keep existing reset and base styles */
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
 
-/* Hero Section with Full-Width Background */
+/* Hero Section with full background image */
 .hero {
   position: relative;
   height: 100vh;
   background: url('nature-background.jpg') no-repeat center center/cover;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
-/* Overlay (slightly transparent) */
+/* Overlay for improved text legibility */
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  /* Darker overlay for better contrast */
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
-/* Hero Content: Centered */
-.hero-content {
+/* Container for centered content */
+.container {
   position: relative;
   z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding: 0 20px;
-}
-
-/* Profile Container */
-.profile-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   max-width: 800px;
+  padding: 20px;
+  text-align: center;
 }
 
-/* Profile Info - New Container for horizontal layout */
-.profile-info {
+/* Profile Section */
+.profile-section {
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
   gap: 30px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Photo Wrapper for White Circle Frame */
+/* Photo Wrapper with white circular frame */
 .photo-wrapper {
   position: relative;
   flex-shrink: 0;
 }
-
-/* Profile photo */
 .profile {
   width: 200px;
   height: 200px;
@@ -62,8 +65,6 @@
   position: relative;
   z-index: 2;
 }
-
-/* White circle frame behind the profile photo */
 .photo-wrapper::after {
   content: "";
   position: absolute;
@@ -76,96 +77,93 @@
   z-index: 1;
 }
 
-/* Text content beside photo */
+/* Text Content next to profile image */
 .text-content {
   text-align: left;
 }
-
-/* Personal Info Styles */
 .name {
-  font-size: 2.2em;
-  margin-bottom: 8px;
+  font-size: 2.5em;
+  margin-bottom: 10px;
 }
-
 .subtitle {
   font-size: 1.2em;
   margin-bottom: 8px;
 }
-
 .location {
   font-size: 0.9em;
   font-style: italic;
   margin-bottom: 15px;
 }
 
-/* Social Links: Horizontal layout */
+/* Social Links */
 .social-links {
   list-style: none;
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
+  padding: 0;
+  justify-content: flex-start;
 }
-
 .social-links li a {
   color: #ffd700;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
-
 .social-links li a:hover {
   color: #fff;
 }
 
-/* Main Navigation (Below Profile) */
-.main-nav ul {
+/* About snippet */
+.about-snippet {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+/* Main Navigation */
+.main-nav {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 5px;
+}
+.nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 20px;
   justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
 }
-
-.main-nav ul li a {
+.nav-links li a {
   color: white;
   text-decoration: none;
-  font-size: 1.1em;
   font-weight: bold;
   transition: color 0.3s;
+  padding: 5px 10px;
 }
-
-.main-nav ul li a:hover {
+.nav-links li a:hover {
   color: #ffd700;
 }
 
-/* Remove the top-nav class as we're not using it anymore */
-
-/* Footer pinned to bottom */
+/* Footer styles */
 footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #333;
+  background-color: #333;
   color: white;
   text-align: center;
-  padding: 15px 0;
+  padding: 15px;
 }
 
-/* Media query for smaller screens */
+/* Media queries for responsiveness */
 @media (max-width: 768px) {
-  .profile-info {
+  .profile-section {
     flex-direction: column;
     text-align: center;
   }
-  
   .text-content {
     text-align: center;
   }
-  
   .social-links {
     justify-content: center;
-  }
-  
-  .main-nav ul {
-    flex-wrap: wrap;
   }
 }
