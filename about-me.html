@@ -5,7 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me | Paula Cid Ornelas</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Google Fonts - Raleway and Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      /* Color palette derived from mountain image - matching homepage */
+      --primary-blue: #1a365d;     /* Deep blue from mountains */
+      --accent-blue: #4a87c9;      /* Sky blue accent */
+      --light-blue: #b3cce6;       /* Light blue for subtle elements */
+      --snow-white: #f5f7fa;       /* Off-white from snow */
+      --dark-overlay: rgba(12, 27, 51, 0.4); /* Dark blue with transparency */
+    }
+    
     * {
       margin: 0;
       padding: 0;
@@ -14,7 +27,12 @@
     
     body, html {
       height: 100%;
-      font-family: Arial, sans-serif;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    
+    h1, h2, h3, .nav-links a {
+      font-family: 'Raleway', Arial, sans-serif;
+      font-weight: 600;
     }
     
     .hero {
@@ -34,7 +52,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.3);
+      /* Gradient overlay with deep blue from mountains - matching homepage */
+      background: linear-gradient(
+        135deg, 
+        rgba(12, 27, 51, 0.7) 0%, 
+        rgba(26, 54, 93, 0.5) 50%, 
+        rgba(12, 27, 51, 0.7) 100%
+      );
       z-index: 1;
     }
     
@@ -57,8 +81,9 @@
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      border: 4px solid white;
+      border: 5px solid var(--snow-white);
       object-fit: cover;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     }
     
     .profile-info {
@@ -69,6 +94,8 @@
     .profile-info h1 {
       font-size: 2.2em;
       margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
     
     .social-links {
@@ -79,14 +106,23 @@
     }
     
     .social-links a {
-      color: #ffd700;
+      color: white;
       text-decoration: none;
-      font-size: 0.95em;
-      transition: color 0.2s;
+      font-size: 1.1em;
+      transition: all 0.3s ease;
     }
     
     .social-links a:hover {
-      color: white;
+      color: var(--accent-blue);
+      transform: translateY(-2px);
+    }
+    
+    .nav-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      margin-bottom: 30px;
     }
     
     .nav-links {
@@ -94,44 +130,64 @@
       display: flex;
       flex-wrap: wrap;
       gap: 25px;
-      margin-bottom: 30px;
-      background-color: rgba(26, 54, 93, 0.7);
-      padding: 15px 20px;
-      border-radius: 6px;
+      justify-content: center;
       width: 100%;
     }
     
     .nav-links a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
-      transition: color 0.2s;
+      font-weight: 600;
+      font-size: 1.2em;
+      padding: 8px 0;
+      position: relative;
+      transition: all 0.3s ease;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: white;
+      transition: width 0.3s ease;
     }
     
     .nav-links a:hover {
-      color: #ffd700;
+      color: var(--light-blue);
+      transform: translateY(-2px);
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
     }
     
     .content {
       background-color: rgba(255, 255, 255, 0.92);
-      border-radius: 6px;
+      border-radius: 8px;
       padding: 30px;
       color: #333;
       margin-bottom: 25px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
     
     .content h2 {
       margin-bottom: 20px;
-      color: #1a365d;
+      color: var(--primary-blue);
       font-size: 1.8em;
-      border-bottom: 2px solid #1a365d;
+      border-bottom: 2px solid var(--primary-blue);
       padding-bottom: 8px;
+      letter-spacing: 0.5px;
     }
     
     .content p {
       margin-bottom: 15px;
       line-height: 1.7;
+      font-weight: 300;
+      letter-spacing: 0.3px;
     }
     
     .section {
@@ -141,12 +197,13 @@
     .section-title {
       font-size: 1.4em;
       margin-bottom: 15px;
-      color: #1a365d;
+      color: var(--primary-blue);
+      letter-spacing: 0.5px;
     }
     
     .quote {
       font-style: italic;
-      border-left: 3px solid #1a365d;
+      border-left: 3px solid var(--primary-blue);
       padding-left: 15px;
       margin: 20px 0;
       background-color: rgba(26, 54, 93, 0.05);
@@ -161,7 +218,7 @@
     }
     
     .gallery-item {
-      border-radius: 6px;
+      border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
@@ -182,6 +239,7 @@
       padding: 12px;
       background-color: #fff;
       font-size: 0.9em;
+      font-family: 'Montserrat', Arial, sans-serif;
     }
     
     .book-list {
@@ -193,11 +251,16 @@
     
     .book-item {
       display: flex;
-      background-color: #f9f9f9;
-      border-radius: 6px;
+      background-color: var(--snow-white);
+      border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
       height: 100%;
+      transition: transform 0.3s ease;
+    }
+    
+    .book-item:hover {
+      transform: translateY(-3px);
     }
     
     .book-cover {
@@ -215,7 +278,8 @@
     .book-title {
       font-weight: bold;
       margin-bottom: 5px;
-      color: #1a365d;
+      color: var(--primary-blue);
+      font-family: 'Raleway', Arial, sans-serif;
     }
     
     .book-author {
@@ -228,17 +292,19 @@
     .book-comment {
       font-size: 0.9em;
       line-height: 1.5;
+      font-weight: 300;
     }
     
     footer {
-      position: relative;
       width: 100%;
       text-align: center;
       padding: 15px;
-      background-color: #1a365d;
-      color: white;
+      background-color: var(--primary-blue);
+      color: var(--snow-white);
       z-index: 2;
       margin-top: 20px;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
     }
     
     @media (max-width: 768px) {
@@ -288,14 +354,16 @@
         </div>
       </div>
       
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="presentations.html">Presentations</a></li>
-        <li><a href="reading-list.html">Reading List</a></li>
-        <li><a href="random-thoughts.html">Random Thoughts</a></li>
-        <li><a href="about-me.html">About Me</a></li>
-      </ul>
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="presentations.html">Presentations</a></li>
+          <li><a href="reading-list.html">Reading List</a></li>
+          <li><a href="random-thoughts.html">Random Thoughts</a></li>
+          <li><a href="about-me.html">About Me</a></li>
+        </ul>
+      </div>
       
       <div class="content">
         <h2>About Me</h2>
@@ -323,6 +391,8 @@
           <p>My goal is to make impactful contributions to sustainable and equitable transportation systems through my research. While the specifics of my future path are still unfolding, my purpose is clear: to identify common ground and develop economically viable, sustainable solutions that benefit all communities, especially those historically underrepresented.</p>
           
           <p>I see transportation not just as infrastructure, but as a critical element of social equity and environmental sustainability. By bridging technical expertise with policy insights, I hope to help shape transportation systems that work for everyone.</p>
+          
+          <p>If you'd like to chat about transportation research, book recommendations, or anything else mentioned here, feel free to reach out via <a href="mailto:cidornelaspaula@gmail.com" style="color: var(--primary-blue); text-decoration: underline; font-weight: 600;">email</a> or <a href="https://www.linkedin.com/in/paulacidornelas" style="color: var(--primary-blue); text-decoration: underline; font-weight: 600;">LinkedIn</a>. I'm always happy to connect!</p>
         </div>
       </div>
       
