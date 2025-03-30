@@ -49,3 +49,18 @@
   color: var(--accent-blue); /* Reverse the hover effect */
   transform: translateY(-2px);
 }
+
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* This centers the navigation horizontally */
+  margin-top: 30px; /* Adds some space between profile info and nav */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center; /* Ensures the links themselves are centered */
+}
