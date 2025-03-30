@@ -512,6 +512,7 @@
       </div>
       
  <!-- Replace your existing photo gallery section with this simplified version -->
+<!-- Replace your existing photo gallery section with this improved version -->
 
 <div class="content">
   <h2>Photo Gallery</h2>
@@ -561,18 +562,21 @@
   .gallery-viewer {
     position: relative;
     width: 100%;
-    height: 500px;
     margin-bottom: 15px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    /* Remove fixed height to allow proper aspect ratio */
+    max-height: 600px;
   }
   
   #featured-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    /* Use auto height to maintain aspect ratio */
+    height: auto;
+    max-height: 600px;
     display: block;
+    object-fit: contain;
   }
   
   #image-caption {
@@ -603,6 +607,7 @@
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s;
+    z-index: 10; /* Ensure buttons are above images */
   }
   
   .gallery-arrow:hover {
@@ -654,7 +659,11 @@
   /* Mobile responsive */
   @media (max-width: 768px) {
     .gallery-viewer {
-      height: 350px;
+      max-height: 450px;
+    }
+    
+    #featured-image {
+      max-height: 450px;
     }
     
     .thumb {
@@ -665,7 +674,11 @@
   
   @media (max-width: 480px) {
     .gallery-viewer {
-      height: 250px;
+      max-height: 350px;
+    }
+    
+    #featured-image {
+      max-height: 350px;
     }
     
     .gallery-arrow {
@@ -685,11 +698,11 @@
   const galleryImages = [
     {
       src: "grad-2022.jpg",
-      caption: "Graduating with my Master's degree at UBC, 2022"
+      caption: "Graduating with my Master's degree at UBC, 2024"
     },
     {
       src: "trb-presentation.jpg",
-      caption: "Presenting with Juan and Steven at the Transportation Research Board conference"
+      caption: "Presenting with Juan and Steven at the Transportation Research Board Conference, 2024"
     },
     {
       src: "sunset-2.jpg",
@@ -697,15 +710,15 @@
     },
     {
       src: "kelowna.jpg",
-      caption: "With my colleagues Eshan, Elmira and Amir at the CTRF conference in Kelowna"
+      caption: "With my colleagues Eshan, Elmira and Amir at the CTRF Conference in Kelowna, 2024"
     },
     {
       src: "venice.jpg",
-      caption: "Exploring a beautiful historic library in Venice, Italy"
+      caption: "Cool library in Venice, Italy"
     },
     {
       src: "grounds.jpg",
-      caption: "My favorite cinnamon bun in Vancouver - worth every calorie!"
+      caption: "My favorite cinnamon bun in Vancouver"
     }
   ];
   
@@ -749,7 +762,6 @@
     }
   });
 </script>
-      
       <div class="content">
         <h2>Favorite Reads So Far</h2>
         <p>A few books that have captivated me recently:</p>
