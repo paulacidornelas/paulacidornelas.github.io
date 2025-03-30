@@ -511,30 +511,144 @@
         </div>
       </div>
       
-      <div class="content">
-        <h2>Photo Gallery</h2>
-        <p>Some snapshots from my adventures and everyday life:</p>
-        
-        <div class="photo-gallery">
-          <!-- Replace these with your actual images -->
-          <div class="gallery-item">
-            <img src="gallery-placeholder-1.jpg" alt="Hiking in Vancouver">
-            <div class="gallery-caption">Sunday hike at Cypress Mountain</div>
-          </div>
-          <div class="gallery-item">
-            <img src="gallery-placeholder-2.jpg" alt="Coffee shop visit">
-            <div class="gallery-caption">My favorite coffee spot in Kitsilano</div>
-          </div>
-          <div class="gallery-item">
-            <img src="gallery-placeholder-3.jpg" alt="Research presentation">
-            <div class="gallery-caption">Presenting at the Transportation Conference</div>
-          </div>
-          <div class="gallery-item">
-            <img src="gallery-placeholder-4.jpg" alt="Hometown in Brazil">
-            <div class="gallery-caption">Visiting home in Brasília</div>
-          </div>
+ <!-- Replace your existing photo gallery section with this code -->
+
+<div class="content">
+  <h2>Photo Gallery</h2>
+  <p>Some snapshots from my adventures and everyday life:</p>
+  
+  <div class="modern-gallery">
+    <div class="gallery-main">
+      <button class="gallery-nav prev-btn"><i class="fas fa-chevron-left"></i></button>
+      <div class="gallery-container">
+        <div class="gallery-slide active">
+          <img src="grad-2022.jpg" alt="Graduating at UBC">
+          <div class="slide-caption">Graduating with my Master's degree at UBC, 2022</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="trb-presentation.jpg" alt="TRB Conference">
+          <div class="slide-caption">Presenting with Juan and Steven at the Transportation Research Board conference</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="sunset-2.jpg" alt="UBC Sunset">
+          <div class="slide-caption">My favorite sunset spot on UBC campus</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="kelowna.jpg" alt="CTRF Conference">
+          <div class="slide-caption">With my colleagues Eshan, Elmira and Amir at the CTRF conference in Kelowna</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="venice.jpg" alt="Venice Library">
+          <div class="slide-caption">Exploring a beautiful historic library in Venice, Italy</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="grounds.jpg" alt="Cinnamon Bun">
+          <div class="slide-caption">My favorite cinnamon bun in Vancouver - worth every calorie!</div>
         </div>
       </div>
+      <button class="gallery-nav next-btn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    
+    <div class="gallery-thumbnails">
+      <!-- Thumbnails will be dynamically populated by JavaScript -->
+    </div>
+    
+    <div class="gallery-dots">
+      <!-- Dots will be dynamically populated by JavaScript -->
+    </div>
+  </div>
+</div>
+
+<!-- Add this JavaScript at the end of your body tag -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Gallery functionality
+    const slides = document.querySelectorAll('.gallery-slide');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const thumbnailsContainer = document.querySelector('.gallery-thumbnails');
+    const dotsContainer = document.querySelector('.gallery-dots');
+    let currentIndex = 0;
+    
+    // Create thumbnails
+    slides.forEach((slide, index) => {
+      const img = slide.querySelector('img');
+      const thumbnail = document.createElement('div');
+      thumbnail.className = `gallery-thumbnail ${index === 0 ? 'active' : ''}`;
+      thumbnail.innerHTML = `<img src="${img.src}" alt="Thumbnail">`;
+      thumbnail.addEventListener('click', () => goToSlide(index));
+      thumbnailsContainer.appendChild(thumbnail);
+      
+      // Create dots
+      const dot = document.createElement('span');
+      dot.className = `gallery-dot ${index === 0 ? 'active' : ''}`;
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+    
+    // Navigation functions
+    function goToSlide(index) {
+      // Hide current slide
+      slides[currentIndex].classList.remove('active');
+      document.querySelectorAll('.gallery-thumbnail')[currentIndex].classList.remove('active');
+      document.querySelectorAll('.gallery-dot')[currentIndex].classList.remove('active');
+      
+      // Show new slide
+      currentIndex = index;
+      slides[currentIndex].classList.add('active');
+      document.querySelectorAll('.gallery-thumbnail')[currentIndex].classList.add('active');
+      document.querySelectorAll('.gallery-dot')[currentIndex].classList.add('active');
+    }
+    
+    function goToNextSlide() {
+      const newIndex = (currentIndex + 1) % slides.length;
+      goToSlide(newIndex);
+    }
+    
+    function goToPrevSlide() {
+      const newIndex = (currentIndex - 1 + slides.length) % slides.length;
+      goToSlide(newIndex);
+    }
+    
+    // Event listeners
+    prevBtn.addEventListener('click', goToPrevSlide);
+    nextBtn.addEventListener('click', goToNextSlide);
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowLeft') {
+        goToPrevSlide();
+      } else if (e.key === 'ArrowRight') {
+        goToNextSlide();
+      }
+    });
+    
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    const galleryContainer = document.querySelector('.gallery-container');
+    
+    galleryContainer.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    galleryContainer.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+    
+    function handleSwipe() {
+      // Detect swipe direction (50px threshold)
+      if (touchEndX < touchStartX - 50) {
+        goToNextSlide(); // Swipe left, show next
+      }
+      if (touchEndX > touchStartX + 50) {
+        goToPrevSlide(); // Swipe right, show previous
+      }
+    }
+  });
+</script>
       
       <div class="content">
         <h2>Favorite Reads So Far</h2>
