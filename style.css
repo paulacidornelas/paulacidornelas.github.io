@@ -64,3 +64,209 @@
   gap: 25px;
   justify-content: center; /* Ensures the links themselves are centered */
 }
+/* Add these CSS styles to your existing stylesheet */
+
+.modern-gallery {
+  margin-top: 30px;
+  position: relative;
+}
+
+.gallery-main {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+}
+
+.gallery-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-color: #000;
+}
+
+.gallery-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  padding: 20px;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: var(--dark-overlay);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2em;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s, background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-nav:hover {
+  opacity: 1;
+  background-color: var(--primary-blue);
+}
+
+.prev-btn {
+  left: 15px;
+}
+
+.next-btn {
+  right: 15px;
+}
+
+.gallery-thumbnails {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 0;
+  margin-bottom: 15px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-blue) var(--light-blue);
+}
+
+.gallery-thumbnails::-webkit-scrollbar {
+  height: 6px;
+}
+
+.gallery-thumbnails::-webkit-scrollbar-track {
+  background: var(--light-blue);
+  border-radius: 3px;
+}
+
+.gallery-thumbnails::-webkit-scrollbar-thumb {
+  background-color: var(--accent-blue);
+  border-radius: 3px;
+}
+
+.gallery-thumbnail {
+  flex: 0 0 auto;
+  width: 100px;
+  height: 60px;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.gallery-thumbnail:hover {
+  opacity: 0.9;
+}
+
+.gallery-thumbnail.active {
+  opacity: 1;
+  border-color: var(--accent-blue);
+  transform: scale(1.05);
+}
+
+.gallery-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.gallery-dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--light-blue);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-dot.active {
+  background-color: var(--accent-blue);
+  transform: scale(1.2);
+}
+
+.gallery-dot:hover {
+  background-color: var(--primary-blue);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery-container {
+    height: 350px;
+  }
+  
+  .gallery-thumbnail {
+    width: 70px;
+    height: 50px;
+  }
+  
+  .gallery-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1em;
+  }
+  
+  .slide-caption {
+    padding: 15px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-container {
+    height: 280px;
+  }
+  
+  .gallery-thumbnails {
+    gap: 5px;
+  }
+  
+  .gallery-thumbnail {
+    width: 60px;
+    height: 40px;
+  }
+}
