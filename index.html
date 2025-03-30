@@ -5,9 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Paula Cid Ornelas | Home</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Google Fonts - Raleway and Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
   
   <!-- Inline CSS -->
   <style>
+    :root {
+      /* Color palette derived from mountain image */
+      --primary-blue: #1a365d;     /* Deep blue from mountains */
+      --accent-blue: #4a87c9;      /* Sky blue accent */
+      --light-blue: #b3cce6;       /* Light blue for subtle elements */
+      --snow-white: #f5f7fa;       /* Off-white from snow */
+      --dark-overlay: rgba(12, 27, 51, 0.4); /* Dark blue with transparency */
+    }
+    
     * {
       margin: 0;
       padding: 0;
@@ -16,7 +29,12 @@
     
     body, html {
       height: 100%;
-      font-family: Arial, sans-serif;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    
+    h1, h2, h3, .nav-links a {
+      font-family: 'Raleway', Arial, sans-serif;
+      font-weight: 600;
     }
     
     .hero {
@@ -35,7 +53,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.3);
+      /* Gradient overlay with deep blue from mountains */
+      background: linear-gradient(
+        135deg, 
+        rgba(12, 27, 51, 0.7) 0%, 
+        rgba(26, 54, 93, 0.5) 50%, 
+        rgba(12, 27, 51, 0.7) 100%
+      );
       z-index: 1;
     }
     
@@ -50,53 +74,83 @@
       display: flex;
       align-items: center;
       gap: 30px;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
     
     .profile-pic {
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      border: 5px solid white;
+      border: 5px solid var(--snow-white);
       object-fit: cover;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     }
     
     .profile-info h1 {
-      font-size: 2.2em;
-      margin-bottom: 10px;
+      font-size: 2.4em;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
     
     .profile-info p {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      font-weight: 300;
+      letter-spacing: 0.3px;
     }
     
     .social-links {
       display: flex;
-      gap: 15px;
+      gap: 20px;
       list-style: none;
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
     
     .social-links a {
-      color: #ffd700;
+      color: var(--accent-blue);
       text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1.1em;
+    }
+    
+    .social-links a:hover {
+      color: var(--snow-white);
+      transform: translateY(-2px);
     }
     
     .nav-links {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 25px;
     }
     
     .nav-links a {
-      color: white;
+      color: var(--snow-white);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      padding: 5px 0;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent-blue);
+      transition: width 0.3s ease;
     }
     
     .nav-links a:hover {
-      color: #ffd700;
+      color: var(--accent-blue);
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
     }
     
     footer {
@@ -105,9 +159,11 @@
       width: 100%;
       text-align: center;
       padding: 15px;
-      background-color: #333;
-      color: white;
+      background-color: var(--primary-blue);
+      color: var(--snow-white);
       z-index: 2;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
     }
     
     @media (max-width: 768px) {
@@ -118,6 +174,10 @@
       
       .nav-links {
         justify-content: center;
+      }
+      
+      .profile-info h1 {
+        font-size: 2em;
       }
     }
   </style>
