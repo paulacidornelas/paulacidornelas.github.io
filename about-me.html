@@ -295,6 +295,76 @@
       font-weight: 300;
     }
     
+    /* Timeline Styles */
+    .timeline-heading {
+      margin: 30px 0 15px;
+      font-size: 1.2em;
+      color: var(--primary-blue);
+      font-family: 'Raleway', Arial, sans-serif;
+      font-weight: 600;
+    }
+    
+    .timeline {
+      position: relative;
+      margin: 20px 0;
+      padding-left: 40px;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: var(--accent-blue);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    
+    .timeline-dot {
+      position: absolute;
+      left: -40px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary-blue);
+      border: 2px solid var(--snow-white);
+      box-shadow: 0 0 0 3px var(--accent-blue);
+    }
+    
+    .timeline-date {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 600;
+      font-size: 0.9em;
+      color: var(--primary-blue);
+      margin-bottom: 5px;
+    }
+    
+    .timeline-content {
+      background: var(--snow-white);
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      border-left: 3px solid var(--accent-blue);
+    }
+    
+    .timeline-content h5 {
+      font-family: 'Raleway', Arial, sans-serif;
+      font-size: 1.1em;
+      margin-bottom: 5px;
+      color: var(--primary-blue);
+    }
+    
+    .timeline-content p {
+      margin-bottom: 5px;
+      font-size: 0.9em;
+    }
+    
     footer {
       width: 100%;
       text-align: center;
@@ -377,6 +447,39 @@
           <p>I've always had a passion for mathematics and engineering, but something felt missing until I discovered how transportation could directly impact society. This realization allowed me to find my path—leveraging technical skills to drive positive change.</p>
           
           <p>Currently, my research focuses on sustainable pavement management systems, exploring ways to create infrastructure that is both climate resilient and has a minimal environmental footprint.</p>
+          
+          <h4 class="timeline-heading">Academic Timeline</h4>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2023-Present</div>
+              <div class="timeline-content">
+                <h5>PhD in Civil Engineering</h5>
+                <p>University of British Columbia, Vancouver</p>
+                <p><em>Research focus: Sustainable pavement management systems and climate-resilient infrastructure</em></p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2022-2023</div>
+              <div class="timeline-content">
+                <h5>Master's in Civil Engineering</h5>
+                <p>University of British Columbia, Vancouver</p>
+                <p><em>Thesis: "Optimization Models for Low-Impact Pavement Maintenance"</em></p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2017-2021</div>
+              <div class="timeline-content">
+                <h5>Bachelor in Civil Engineering</h5>
+                <p>University of Brasília, Brazil</p>
+                <p><em>Graduated with honors. Senior project on traffic flow optimization</em></p>
+              </div>
+            </div>
+          </div>
         </div>
         
         <div class="section">
