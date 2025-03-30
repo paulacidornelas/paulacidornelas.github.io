@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Paula Cid Ornelas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+    
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background: url('nature-background.jpg') no-repeat center center/cover;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 50px 0;
+    }
+    
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+    
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 20px;
+      width: 100%;
+    }
+    
+    .profile-section {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid white;
+      object-fit: cover;
+    }
+    
+    .profile-info h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+    
+    .profile-info p {
+      margin-bottom: 8px;
+    }
+    
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    .nav-links a:hover {
+      color: #ffd700;
+    }
+    
+    .content {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      padding: 30px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    
+    .content h2 {
+      margin-bottom: 20px;
+      color: #1a365d;
+      font-size: 1.8em;
+    }
+    
+    .content p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    
+    .section {
+      margin-bottom: 30px;
+    }
+    
+    .section-title {
+      font-size: 1.4em;
+      margin-bottom: 15px;
+      color: #1a365d;
+    }
+    
+    .quote {
+      font-style: italic;
+      border-left: 3px solid #1a365d;
+      padding-left: 15px;
+      margin: 20px 0;
+      background-color: rgba(26, 54, 93, 0.05);
+      padding: 15px;
+    }
+    
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .gallery-item {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .gallery-caption {
+      padding: 10px;
+      background-color: #fff;
+      font-size: 0.9em;
+    }
+    
+    .book-list {
+      margin-top: 20px;
+    }
+    
+    .book-item {
+      display: flex;
+      margin-bottom: 15px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .book-cover {
+      width: 80px;
+      height: 120px;
+      object-fit: cover;
+      background-color: #ddd;
+    }
+    
+    .book-info {
+      padding: 10px 15px;
+    }
+    
+    .book-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .book-author {
+      font-style: italic;
+      margin-bottom: 8px;
+      color: #555;
+      font-size: 0.9em;
+    }
+    
+    .book-comment {
+      font-size: 0.9em;
+    }
+    
+    footer {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: white;
+      z-index: 2;
+    }
+    
+    @media (max-width: 768px) {
+      .profile-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .nav-links {
+        justify-content: center;
+      }
+      
+      .photo-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
+      
+      .book-item {
+        flex-direction: column;
+      }
+      
+      .book-cover {
+        width: 100%;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="overlay"></div>
+    
+    <div class="container">
+      <div class="profile-section">
+        <img src="profile.jpg" alt="Paula Cid Ornelas" class="profile-pic">
+        
+        <div class="profile-info">
+          <h1>Paula Cid Ornelas</h1>
+          <p>PhD Student | Bookworm | Beginner Yogi</p>
+          <p><i>Vancouver, Canada</i></p>
+        </div>
+      </div>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="presentations.html">Presentations</a></li>
+        <li><a href="reading-list.html">Reading List</a></li>
+        <li><a href="random-thoughts.html">Random Thoughts</a></li>
+        <li><a href="about-me.html">About Me</a></li>
+      </ul>
+      
+      <div class="content">
+        <h2>About Me</h2>
+        
+        <div class="section">
+          <p><strong>Hi! I'm Paula</strong>, a PhD student in Civil Engineering at the University of British Columbia, specializing in Transportation. Originally from Brasília, Brazil, I moved to Vancouver in 2022 to pursue my master's degree and fell in love with the city (despite the rain!).</p>
+        </div>
+        
+        <div class="section">
+          <h3 class="section-title">My Research Journey</h3>
+          <p>I've always had a passion for mathematics and engineering, but something felt missing until I discovered how transportation could directly impact society. This realization allowed me to find my path—leveraging technical skills to drive positive change.</p>
+          
+          <p>Currently, my research focuses on sustainable pavement management systems, exploring ways to create infrastructure that is both climate resilient and has a minimal environmental footprint.</p>
+        </div>
+        
+        <div class="section">
+          <h3 class="section-title">Life Outside Academia</h3>
+          <p>When I'm not doing research, you'll likely find me with my nose in a book. I love reading fiction, with Elena Ferrante and Isabel Allende ranking among my favorites. I love the saying "Read non-fiction to raise your floor. Read fiction to raise your ceiling."</p>
+          
+          <p>Since moving to Vancouver, I've been embracing the Pacific Northwest lifestyle by trying yoga, exploring hiking trails, and trying to ski. I'm also an enthusiastic traveler and coffee explorer—finding unique coffee shops is one of my favorite ways to discover a new place or even rediscover familiar neighborhoods.</p>
+        </div>
+        
+        <div class="section">
+          <h3 class="section-title">Looking Forward</h3>
+          <p>My goal is to make impactful contributions to sustainable and equitable transportation systems through my research. While the specifics of my future path are still unfolding, my purpose is clear: to identify common ground and develop economically viable, sustainable solutions that benefit all communities, especially those historically underrepresented.</p>
+          
+          <p>I see transportation not just as infrastructure, but as a critical element of social equity and environmental sustainability. By bridging technical expertise with policy insights, I hope to help shape transportation systems that work for everyone.</p>
+        </div>
+      </div>
+      
+      <div class="content">
+        <h2>Photo Gallery</h2>
+        <p>Some snapshots from my adventures and everyday life:</p>
+        
+        <div class="photo-gallery">
+          <!-- Replace these with your actual images -->
+          <div class="gallery-item">
+            <img src="gallery-placeholder-1.jpg" alt="Hiking in Vancouver">
+            <div class="gallery-caption">Sunday hike at Cypress Mountain</div>
+          </div>
+          <div class="gallery-item">
+            <img src="gallery-placeholder-2.jpg" alt="Coffee shop visit">
+            <div class="gallery-caption">My favorite coffee spot in Kitsilano</div>
+          </div>
+          <div class="gallery-item">
+            <img src="gallery-placeholder-3.jpg" alt="Research presentation">
+            <div class="gallery-caption">Presenting at the Transportation Conference</div>
+          </div>
+          <div class="gallery-item">
+            <img src="gallery-placeholder-4.jpg" alt="Hometown in Brazil">
+            <div class="gallery-caption">Visiting home in Brasília</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="content">
+        <h2>Favorite Reads So Far</h2>
+        <p>A few books that have captivated me recently:</p>
+        
+        <div class="book-list">
+          <!-- Replace with actual book covers and information -->
+          <div class="book-item">
+            <img src="book-placeholder-1.jpg" alt="Book Cover" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">The Neapolitan Novels</div>
+              <div class="book-author">Elena Ferrante</div>
+              <div class="book-comment">A breathtaking saga of female friendship that completely absorbed me. Ferrante's writing is raw and honest in a way that feels revolutionary.</div>
+            </div>
+          </div>
+          
+          <div class="book-item">
+            <img src="book-placeholder-2.jpg" alt="Book Cover" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">The House of the Spirits</div>
+              <div class="book-author">Isabel Allende</div>
+              <div class="book-comment">Magical realism at its finest. Allende weaves a multi-generational tale that feels both fantastical and deeply human.</div>
+            </div>
+          </div>
+          
+          <div class="book-item">
+            <img src="book-placeholder-3.jpg" alt="Book Cover" class="book-cover">
+            <div class="book-info">
+              <div class="book-title">Parable of the Sower</div>
+              <div class="book-author">Octavia E. Butler</div>
+              <div class="book-comment">A prescient novel that feels increasingly relevant. Butler's vision of a climate-changed future is haunting yet hopeful.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Paula Cid Ornelas. All rights reserved.</p>
+  </footer>
+</body>
+</html>
