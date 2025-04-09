@@ -14,7 +14,7 @@
   <style>
     :root {
       /* Color palette derived from mountain image */
-      --primary-blue: #1a365d;     /* Deep blue from mountains */
+      --primary-blue: #26467e;     /* Deep blue from mountains - updated to match screenshot */
       --accent-blue: #4a87c9;      /* Sky blue accent */
       --light-blue: #b3cce6;       /* Light blue for subtle elements */
       --snow-white: #f5f7fa;       /* Off-white from snow */
@@ -34,7 +34,7 @@
     
     h1, h2, h3, .nav-links a {
       font-family: 'Raleway', Arial, sans-serif;
-      font-weight: 600;
+      font-weight: 400;
     }
     
     .hero {
@@ -68,6 +68,7 @@
       z-index: 2;
       max-width: 800px;
       padding: 20px;
+      text-align: center; /* Center all content in the container */
     }
     
     .profile-section {
@@ -87,7 +88,7 @@
     }
     
     .profile-info h1 {
-      font-size: 2.4em;
+      font-size: 3em;
       margin-bottom: 12px;
       letter-spacing: 0.5px;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -97,6 +98,7 @@
       margin-bottom: 10px;
       font-weight: 300;
       letter-spacing: 0.3px;
+      font-size: 1.2em;
     }
     
     .social-links {
@@ -104,6 +106,7 @@
       gap: 20px;
       list-style: none;
       margin: 20px 0;
+      justify-content: center; /* Center the social links */
     }
     
     .social-links a {
@@ -123,13 +126,16 @@
       display: flex;
       flex-wrap: wrap;
       gap: 25px;
+      justify-content: center; /* Center the navigation links */
+      width: 100%;
     }
     
     .nav-links a {
       color: var(--snow-white);
       text-decoration: none;
-      font-weight: 600;
-      padding: 5px 0;
+      font-weight: 400;
+      font-size: 1.5em;
+      padding: 5px 15px;
       position: relative;
       transition: all 0.3s ease;
     }
@@ -192,7 +198,7 @@
         
         <div class="profile-info">
           <h1>Paula Cid Ornelas</h1>
-          <p> Engineering PhD Student | Bookworm | Yogi</p>
+          <p>Engineering PhD Student | Bookworm | Yogi</p>
           <p><i>Vancouver, Canada</i></p>
           
           <ul class="social-links">
