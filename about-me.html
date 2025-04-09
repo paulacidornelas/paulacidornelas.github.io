@@ -513,9 +513,6 @@
         </div>
       </div>
       
- <!-- Replace your existing photo gallery section with this simplified version -->
-<!-- Replace your existing photo gallery section with this improved version -->
-
 <div class="content">
   <h2>Photo Gallery</h2>
   <p>Some snapshots from my life:</p>
@@ -763,6 +760,28 @@
       changeImage(1);
     }
   });
+
+  // Make sure the code runs when the page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize gallery
+    updateGallery();
+    
+    // Add click handlers to buttons and thumbnails
+    document.querySelector('.left-arrow').addEventListener('click', function() {
+      changeImage(-1);
+    });
+    
+    document.querySelector('.right-arrow').addEventListener('click', function() {
+      changeImage(1);
+    });
+    
+    document.querySelectorAll('.thumb').forEach(function(thumb, index) {
+      thumb.addEventListener('click', function() {
+        jumpToImage(index);
+      });
+    });
+  });
+</script>
   <footer>
     <p>&copy; 2025 Paula Cid Ornelas. All rights reserved.</p>
   </footer>
