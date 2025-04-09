@@ -12,7 +12,7 @@
   <style>
     :root {
       /* Color palette derived from mountain image - matching homepage */
-      --primary-blue: #1a365d;     /* Deep blue from mountains */
+      --primary-blue: #26467e;     /* Deep blue from mountains */
       --accent-blue: #4a87c9;      /* Sky blue accent */
       --light-blue: #b3cce6;       /* Light blue for subtle elements */
       --snow-white: #f5f7fa;       /* Off-white from snow */
@@ -32,7 +32,7 @@
     
     h1, h2, h3, .nav-links a {
       font-family: 'Raleway', Arial, sans-serif;
-      font-weight: 600;
+      font-weight: 400;
     }
     
     .hero {
@@ -73,13 +73,14 @@
     .profile-section {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 40px;
       margin-bottom: 25px;
+      margin-top: 30px;
     }
     
     .profile-pic {
-      width: 150px;
-      height: 150px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       border: 5px solid var(--snow-white);
       object-fit: cover;
@@ -92,10 +93,15 @@
     }
     
     .profile-info h1 {
-      font-size: 2.2em;
+      font-size: 3em;
       margin-bottom: 12px;
       letter-spacing: 0.5px;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .profile-info p {
+      font-size: 1.2em;
+      margin-bottom: 5px;
     }
     
     .social-links {
@@ -132,14 +138,15 @@
       gap: 25px;
       justify-content: center;
       width: 100%;
+      text-align: center;
     }
     
     .nav-links a {
       color: white;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.2em;
-      padding: 8px 0;
+      font-weight: 400;
+      font-size: 1.5em;
+      padding: 8px 15px;
       position: relative;
       transition: all 0.3s ease;
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -205,6 +212,7 @@
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
     }
     
     .project-card:hover {
@@ -231,7 +239,7 @@
       background: linear-gradient(to top, rgba(12, 27, 51, 0.9), rgba(12, 27, 51, 0));
       padding: 30px 20px 20px;
       color: white;
-      transform: translateY(100%);
+      transform: translateY(70%);
       transition: transform 0.3s ease;
       display: flex;
       flex-direction: column;
@@ -245,9 +253,10 @@
     
     .project-title {
       font-family: 'Raleway', Arial, sans-serif;
-      font-size: 1.5em;
+      font-size: 1.3em;
       font-weight: 600;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
+      text-transform: capitalize;
     }
     
     .project-description {
@@ -255,6 +264,7 @@
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+      line-height: 1.5;
     }
     
     .project-card:hover .project-description {
@@ -337,12 +347,14 @@
         
         <div class="profile-info">
           <h1>Paula Cid Ornelas</h1>
+          <p>Engineering PhD Student | Bookworm | Yogi</p>
+          <p><i>Vancouver, Canada</i></p>
+          
           <ul class="social-links">
             <li><a href="mailto:cidornelaspaula@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
             <li><a href="https://www.linkedin.com/in/paulacidornelas"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
             <li><a href="https://www.goodreads.com/user/show/70598345-paula-cid"><i class="fab fa-goodreads"></i> Goodreads</a></li>
           </ul>
-          <p><i>Vancouver, Canada</i></p>
         </div>
       </div>
       
@@ -381,10 +393,10 @@
           
           <!-- Project 3 -->
           <a href="#" class="project-card">
-            <img src="bc-project.jpg" alt="Smart Cities Evaluation" class="project-image">
+            <img src="bc-project.jpg" alt="Roadway Characteristics and Recovery" class="project-image">
             <div class="project-overlay">
-              <h3 class="project-title">Roadway Characteristics and Post-Disaster Highway Recovery in BC</h3>
-              <p class="project-description">Project that I worked on during my master's to assess the impacts of road infrastructure and weather characteristics on post-disaster recovery times in British Columbia, Canada .</p>
+              <h3 class="project-title">Roadway Characteristics and Post-Disaster Recovery</h3>
+              <p class="project-description">Research on the impacts of road infrastructure and weather conditions on post-disaster recovery times in British Columbia.</p>
               <div class="project-tags">
                 <span class="project-tag">Master's</span>
                 <span class="project-tag">Infrastructure</span>
@@ -395,10 +407,10 @@
 
           <!-- Project 1 -->
           <a href="#" class="project-card">
-            <img src="berkeley-group-project.jpg" alt="Project Name" class="project-image">
+            <img src="berkeley-group-project.jpg" alt="Traffic Congestion Project" class="project-image">
             <div class="project-overlay">
-              <h3 class="project-title">Addressing Traffic Congestion and Air Quality in Developing Country</h3>
-              <p class="project-description">This is a group project I was involved during my exchange term at UC Berkeley.</p>
+              <h3 class="project-title">Traffic Congestion and Air Quality Solutions</h3>
+              <p class="project-description">Group project conducted during my exchange term at UC Berkeley focused on developing solutions for traffic congestion in developing countries.</p>
               <div class="project-tags">
                 <span class="project-tag">Undergrad</span>
                 <span class="project-tag">Climate</span>
@@ -409,10 +421,10 @@
           
           <!-- Project 4 -->
           <a href="#" class="project-card">
-            <img src="woman-train.jpg" alt="Shared Mobility Research" class="project-image">
+            <img src="woman-train.jpg" alt="Women-only Train Cars" class="project-image">
             <div class="project-overlay">
-              <h3 class="project-title">Women-only train passenger cars in Brazil</h3>
-              <p class="project-description">Paper that I wrote to a course during my exchange term at UC Berkeley.</p>
+              <h3 class="project-title">Women-only Train Cars in Brazil</h3>
+              <p class="project-description">Research paper examining the effectiveness and social impacts of women-only passenger cars in Brazilian public transit systems.</p>
               <div class="project-tags">
                 <span class="project-tag">Undergrad</span>
                 <span class="project-tag">Policy</span>
@@ -422,25 +434,23 @@
           
           <!-- Project 5 -->
           <a href="#" class="project-card">
-            <img src="resource-allocation.jpg" alt="Life Cycle Assessment of Pavements" class="project-image">
+            <img src="resource-allocation.jpg" alt="Pavement Maintenance Optimization" class="project-image">
             <div class="project-overlay">
-              <h3 class="project-title">Optimizing the Allocation of Pavement Maintenance Expenditures </h3>
-              <p class="project-description">Project that I have worked on during my Optimization Course during my PhD. </p>
+              <h3 class="project-title">Pavement Maintenance Resource Optimization</h3>
+              <p class="project-description">Research on optimizing the allocation of pavement maintenance expenditures to maximize infrastructure longevity and minimize costs.</p>
               <div class="project-tags">
                 <span class="project-tag">Infrastructure</span>
                 <span class="project-tag">PhD</span>
-
               </div>
             </div>
           </a>
           
           <!-- Project 6 -->
           <a href="#" class="project-card">
-            <img src="more.jpg" alt="Transportation Equity Analysis" class="project-image">
+            <img src="more.jpg" alt="More Projects Coming Soon" class="project-image">
             <div class="project-overlay">
-              <h3 class="project-title">More coming soon...</h3>
+              <h3 class="project-title">More Coming Soon...</h3>
               <div class="project-tags">
-      
               </div>
             </div>
           </a>
