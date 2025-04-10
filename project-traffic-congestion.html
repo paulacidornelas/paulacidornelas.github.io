@@ -30,6 +30,8 @@
       font-family: 'Montserrat', Arial, sans-serif;
       scroll-behavior: smooth;
       background-color: var(--snow-white);
+      width: 100%;
+      overflow-x: hidden;
     }
     
     h1, h2, h3, .nav-links a {
@@ -40,13 +42,14 @@
     /* Hero section with background image */
     .hero {
       position: relative;
-      min-height: 100vh;
+      min-height: 60vh;
       background: url('nature-background.jpg') no-repeat center center/cover;
       color: white;
       display: flex;
       justify-content: center;
       align-items: flex-start;
       padding: 30px 0;
+      width: 100%;
     }
     
     .overlay {
@@ -72,14 +75,6 @@
       width: 100%;
       margin: 0 auto;
       padding: 0;
-    }
-
-    .page-container {
-      background-color: white;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
     
     .profile-section {
@@ -178,10 +173,11 @@
     }
     
     .content {
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 8px;
       padding: 40px;
       color: #333;
-      margin: -60px auto 0;
+      margin: -60px auto 25px;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       position: relative;
       z-index: 10;
@@ -191,7 +187,7 @@
     .content h2 {
       margin-bottom: 20px;
       color: var(--primary-blue);
-      font-size: 2em;
+      font-size: 1.8em;
       border-bottom: 2px solid var(--primary-blue);
       padding-bottom: 15px;
       letter-spacing: 0.5px;
@@ -442,173 +438,169 @@
   </style>
 </head>
 <body>
-  <div class="page-container">
-    <!-- Hero section with background image -->
-    <div class="hero">
-      <div class="overlay"></div>
-      
-      <div class="container">
-        <div class="profile-section">
-          <img src="profile.jpg" alt="Paula Cid Ornelas" class="profile-pic">
-          
-          <div class="profile-info">
-            <h1>Paula Cid Ornelas</h1>
-            <ul class="social-links">
-              <li><a href="mailto:cidornelaspaula@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
-              <li><a href="https://www.linkedin.com/in/paulacidornelas"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-              <li><a href="https://www.goodreads.com/user/show/70598345-paula-cid"><i class="fab fa-goodreads"></i> Goodreads</a></li>
-            </ul>
-            <p><i>Vancouver, Canada</i></p>
-          </div>
-        </div>
+  <!-- Hero section with background image -->
+  <div class="hero">
+    <div class="overlay"></div>
+    
+    <div class="container">
+      <div class="profile-section">
+        <img src="profile.jpg" alt="Paula Cid Ornelas" class="profile-pic">
         
-        <div class="nav-container">
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="cv.html">CV</a></li>
-            <li><a href="presentations.html">Presentations</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="reading-list.html">Reading List</a></li>
-            <li><a href="about-me.html">About Me</a></li>
+        <div class="profile-info">
+          <h1>Paula Cid Ornelas</h1>
+          <ul class="social-links">
+            <li><a href="mailto:cidornelaspaula@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://www.linkedin.com/in/paulacidornelas"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="https://www.goodreads.com/user/show/70598345-paula-cid"><i class="fab fa-goodreads"></i> Goodreads</a></li>
           </ul>
+          <p><i>Vancouver, Canada</i></p>
         </div>
+      </div>
+      
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="presentations.html">Presentations</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="reading-list.html">Reading List</a></li>
+          <li><a href="about-me.html">About Me</a></li>
+        </ul>
       </div>
     </div>
-    
-    <div class="content">
-      <h2>Traffic Congestion and Air Quality in Developing Cities</h2>
-      
-      <p>During my exchange term at UC Berkeley, I took a graduate course in Transportation Sustainability that deeply shaped how I view transportation, social equity, and environmental sustainability. For our final project, I worked alongside a group of passionate international students to explore how cities in developing countries can design more effective and realistic policies to tackle two urban challenges: traffic congestion and air pollution.</p>
-      
-
-      <h3>Why We Did This</h3>
-      <p>Traffic congestion causes more than just delays and lost productivity—it also leads to high fuel consumption and contributes significantly to air pollution, which has serious public health consequences. In many developing countries, agencies operate under strict budget constraints, meaning they can't rely on large-scale infrastructure or advanced technologies like electric vehicles (EVs) or autonomous vehicles (AVs) to solve these issues.</p>
-      
-      <p>Our goal was to understand how commuters make travel choices, and what kinds of transportation policies they would support. In particular, we wanted to uncover the implicit trade-offs commuters are willing to make: are they more concerned with saving time, reducing costs, or improving air quality?</p>
-      
-      <h3>Our Methodology</h3>
-      <p>To answer this, we designed and distributed an online survey in three cities: Mexico City, Bangalore, and Chongqing. The survey included:</p>
-      
-      <div class="info-card">
-        <h3><i class="fas fa-calculator"></i> Analysis Models</h3>
-        <p>We collected 287 valid responses and developed two multinomial logit discrete choice models:</p>
-        <ol>
-          <li>A mode choice model, capturing how people select transportation modes.</li>
-          <li>A policy preference model, identifying which policies are most (and least) acceptable across different cities.</li>
-        </ol>
-      </div>
-      
-      <h3>What's Already Being Tried</h3>
-      <div class="policy-cards">
-        <div class="policy-card">
-          <h4>China</h4>
-          <p>China has implemented road space rationing through even-odd license plate systems and car purchase restrictions. However, wealthier residents often bypass these policies by purchasing second vehicles with alternate plate numbers. In response, cities like Beijing have implemented vehicle registration lotteries to control car ownership.</p>
-        </div>
-        
-        <div class="policy-card">
-          <h4>India</h4>
-          <p>India has begun testing density-based intelligent traffic lights, which adjust in real time based on traffic volume. While innovative, their effectiveness is limited during peak hours when roads are already over capacity. India has also seen success with employer-led TDM strategies, like subsidized transit passes and last-mile shuttle services, which have shifted 30–50% of employees away from private car use.</p>
-        </div>
-        
-        <div class="policy-card">
-          <h4>Mexico City</h4>
-          <p>Mexico City has enforced Hoy No Circula, a vehicle restriction policy dating back to 1989, which limits car use based on license plate digits. While intended to reduce emissions, studies have found that the policy may have led to increased car ownership, especially among higher-income households, and worsened equity outcomes.</p>
-        </div>
-      </div>
-      
-      <h3>What the Literature Tells Us</h3>
-      <p>Our literature review revealed that many developing cities are exploring creative solutions, but there's often a gap between policy design and commuter acceptance. Some key findings include:</p>
-      
-      <ul>
-        <li><strong>Incentives and education matter:</strong> Ettema et al. (2010) showed that providing daily financial incentives for avoiding rush hour traffic in the Netherlands led to a 60% reduction in peak-hour trips.</li>
-        <li><strong>Perceptions of safety are critical:</strong> Susilo et al. (2010) found that in Indonesian cities, people were willing to pay more for safer and more secure public transit, even if it meant reduced comfort. Similarly, Waqas et al. (2018) found that in China, awareness of sustainability and safety concerns influenced people's openness to alternative modes.</li>
-        <li><strong>Some well-intentioned policies may backfire:</strong> Mahendra (2008) found that transport experts in Mexico City and other Latin American cities viewed vehicle restrictions like Hoy No Circula as ineffective and even counterproductive, due to increased vehicle miles traveled (VMT) and worsened mobility equity.</li>
-        <li><strong>Awareness isn't enough:</strong> Geng et al. (2017) emphasized that while environmental awareness influences behavior, policies must be tailored to different user groups to have real impact.</li>
-      </ul>
-      
-
-      
-      <h3>What We Learned</h3>
-      <p>Our results revealed several key insights:</p>
-      
-      <ul class="key-findings">
-        <li>Air quality improvements were consistently valued across all cities—even more than travel time or cost savings.</li>
-        <li>Work-from-home incentives were the most preferred policy in India and Mexico, suggesting flexible work could be a powerful, low-cost strategy.</li>
-        <li>Increasing driving costs had limited impact on behavior unless paired with improved public transit options.</li>
-        <li>Gender and safety concerns strongly influenced women's mode choices, especially in India and Mexico—highlighting the need for safer public transport systems.</li>
-        <li>Perceived prestige of travel modes influenced decisions more than expected—pointing to opportunities for public campaigns to reframe sustainable travel choices.</li>
-      </ul>
-      
-      <h3>Policy Recommendations Based on Our Model</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Recommended Policy Strategies</th>
-            <th>India</th>
-            <th>Mexico</th>
-            <th>China</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Link policies to impact on local air pollution</td>
-            <td>Yes</td>
-            <td>Yes</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>Raise costs of driving and channel funds into improving public transit</td>
-            <td>Yes</td>
-            <td>Yes</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>Improve transit times to encourage shift to public transit</td>
-            <td>Yes</td>
-            <td>–</td>
-            <td>–</td>
-          </tr>
-          <tr>
-            <td>Reduce costs to encourage shift to public transit</td>
-            <td>–</td>
-            <td>Yes</td>
-            <td>–</td>
-          </tr>
-          <tr>
-            <td>Work-from-home policies</td>
-            <td>Yes</td>
-            <td>Yes</td>
-            <td>–</td>
-          </tr>
-          <tr>
-            <td>Vehicle usage restrictions</td>
-            <td>Yes</td>
-            <td>–</td>
-            <td>Yes</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>This table highlights which policy recommendations emerged as most effective or acceptable across each city, based on our modeling results.</p>
-      
-      <h3>Limitations</h3>
-      <ul>
-        <li>A modest sample size (287 respondents), which may not be fully representative of each city.</li>
-        <li>Online-only data collection, which may have skewed our sample toward higher-income, more digitally connected individuals.</li>
-        <li>Reliance on stated preferences, which might differ from actual travel behavior in real life.</li>
-      </ul>
-      <p>Still, we believe our approach offers valuable insight into how commuters think—and what they're willing to support—in diverse urban settings.</p>
-      
-      <div class="highlight-box">
-        <h3>Final Takeaway</h3>
-        <p>Our research demonstrated that policies addressing air quality can gain significant public support, even in cities where time and cost are major concerns. Most importantly, we found that developing cities don't need to wait for expensive technological solutions—there are immediate, context-appropriate strategies that can reduce congestion and improve air quality while meeting the specific needs and preferences of local communities.</p>
-      </div>
-      
-      <a href="projects.html" class="back-to-projects"><i class="fas fa-arrow-left"></i> Back to Projects</a>
-    </div>
-    
-    <footer>
-      &copy; 2025 Paula Cid Ornelas | All Rights Reserved
-    </footer>
   </div>
+  
+  <div class="content">
+    <h2>Traffic Congestion and Air Quality in Developing Cities</h2>
+    
+    <p>During my exchange term at UC Berkeley, I took a graduate course in Transportation Sustainability that deeply shaped how I view transportation, social equity, and environmental sustainability. For our final project, I worked alongside a group of passionate international students to explore how cities in developing countries can design more effective and realistic policies to tackle two urban challenges: traffic congestion and air pollution.</p>
+    
+
+    <h3>Why We Did This</h3>
+    <p>Traffic congestion causes more than just delays and lost productivity—it also leads to high fuel consumption and contributes significantly to air pollution, which has serious public health consequences. In many developing countries, agencies operate under strict budget constraints, meaning they can't rely on large-scale infrastructure or advanced technologies like electric vehicles (EVs) or autonomous vehicles (AVs) to solve these issues.</p>
+    
+    <p>Our goal was to understand how commuters make travel choices, and what kinds of transportation policies they would support. In particular, we wanted to uncover the implicit trade-offs commuters are willing to make: are they more concerned with saving time, reducing costs, or improving air quality?</p>
+    
+    <h3>Our Methodology</h3>
+    <p>To answer this, we designed and distributed an online survey in three cities: Mexico City, Bangalore, and Chongqing. The survey included:</p>
+    
+    <div class="info-card">
+      <h3><i class="fas fa-calculator"></i> Analysis Models</h3>
+      <p>We collected 287 valid responses and developed two multinomial logit discrete choice models:</p>
+      <ol>
+        <li>A mode choice model, capturing how people select transportation modes.</li>
+        <li>A policy preference model, identifying which policies are most (and least) acceptable across different cities.</li>
+      </ol>
+    </div>
+    
+    <h3>What's Already Being Tried</h3>
+    <div class="policy-cards">
+      <div class="policy-card">
+        <h4>China</h4>
+        <p>China has implemented road space rationing through even-odd license plate systems and car purchase restrictions. However, wealthier residents often bypass these policies by purchasing second vehicles with alternate plate numbers. In response, cities like Beijing have implemented vehicle registration lotteries to control car ownership.</p>
+      </div>
+      
+      <div class="policy-card">
+        <h4>India</h4>
+        <p>India has begun testing density-based intelligent traffic lights, which adjust in real time based on traffic volume. While innovative, their effectiveness is limited during peak hours when roads are already over capacity. India has also seen success with employer-led TDM strategies, like subsidized transit passes and last-mile shuttle services, which have shifted 30–50% of employees away from private car use.</p>
+      </div>
+      
+      <div class="policy-card">
+        <h4>Mexico City</h4>
+        <p>Mexico City has enforced Hoy No Circula, a vehicle restriction policy dating back to 1989, which limits car use based on license plate digits. While intended to reduce emissions, studies have found that the policy may have led to increased car ownership, especially among higher-income households, and worsened equity outcomes.</p>
+      </div>
+    </div>
+    
+    <h3>What the Literature Tells Us</h3>
+    <p>Our literature review revealed that many developing cities are exploring creative solutions, but there's often a gap between policy design and commuter acceptance. Some key findings include:</p>
+    
+    <ul>
+      <li><strong>Incentives and education matter:</strong> Ettema et al. (2010) showed that providing daily financial incentives for avoiding rush hour traffic in the Netherlands led to a 60% reduction in peak-hour trips.</li>
+      <li><strong>Perceptions of safety are critical:</strong> Susilo et al. (2010) found that in Indonesian cities, people were willing to pay more for safer and more secure public transit, even if it meant reduced comfort. Similarly, Waqas et al. (2018) found that in China, awareness of sustainability and safety concerns influenced people's openness to alternative modes.</li>
+      <li><strong>Some well-intentioned policies may backfire:</strong> Mahendra (2008) found that transport experts in Mexico City and other Latin American cities viewed vehicle restrictions like Hoy No Circula as ineffective and even counterproductive, due to increased vehicle miles traveled (VMT) and worsened mobility equity.</li>
+      <li><strong>Awareness isn't enough:</strong> Geng et al. (2017) emphasized that while environmental awareness influences behavior, policies must be tailored to different user groups to have real impact.</li>
+    </ul>
+    
+    <h3>What We Learned</h3>
+    <p>Our results revealed several key insights:</p>
+    
+    <ul class="key-findings">
+      <li>Air quality improvements were consistently valued across all cities—even more than travel time or cost savings.</li>
+      <li>Work-from-home incentives were the most preferred policy in India and Mexico, suggesting flexible work could be a powerful, low-cost strategy.</li>
+      <li>Increasing driving costs had limited impact on behavior unless paired with improved public transit options.</li>
+      <li>Gender and safety concerns strongly influenced women's mode choices, especially in India and Mexico—highlighting the need for safer public transport systems.</li>
+      <li>Perceived prestige of travel modes influenced decisions more than expected—pointing to opportunities for public campaigns to reframe sustainable travel choices.</li>
+    </ul>
+    
+    <h3>Policy Recommendations Based on Our Model</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Recommended Policy Strategies</th>
+          <th>India</th>
+          <th>Mexico</th>
+          <th>China</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Link policies to impact on local air pollution</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Raise costs of driving and channel funds into improving public transit</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Improve transit times to encourage shift to public transit</td>
+          <td>Yes</td>
+          <td>–</td>
+          <td>–</td>
+        </tr>
+        <tr>
+          <td>Reduce costs to encourage shift to public transit</td>
+          <td>–</td>
+          <td>Yes</td>
+          <td>–</td>
+        </tr>
+        <tr>
+          <td>Work-from-home policies</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>–</td>
+        </tr>
+        <tr>
+          <td>Vehicle usage restrictions</td>
+          <td>Yes</td>
+          <td>–</td>
+          <td>Yes</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>This table highlights which policy recommendations emerged as most effective or acceptable across each city, based on our modeling results.</p>
+    
+    <h3>Limitations</h3>
+    <ul>
+      <li>A modest sample size (287 respondents), which may not be fully representative of each city.</li>
+      <li>Online-only data collection, which may have skewed our sample toward higher-income, more digitally connected individuals.</li>
+      <li>Reliance on stated preferences, which might differ from actual travel behavior in real life.</li>
+    </ul>
+    <p>Still, we believe our approach offers valuable insight into how commuters think—and what they're willing to support—in diverse urban settings.</p>
+    
+    <div class="highlight-box">
+      <h3>Final Takeaway</h3>
+      <p>Our research demonstrated that policies addressing air quality can gain significant public support, even in cities where time and cost are major concerns. Most importantly, we found that developing cities don't need to wait for expensive technological solutions—there are immediate, context-appropriate strategies that can reduce congestion and improve air quality while meeting the specific needs and preferences of local communities.</p>
+    </div>
+    
+    <a href="projects.html" class="back-to-projects"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+  </div>
+  
+  <footer>
+    &copy; 2025 Paula Cid Ornelas | All Rights Reserved
+  </footer>
 </body>
 </html>
