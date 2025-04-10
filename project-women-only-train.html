@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Women-Only Train Cars in Brazil | Paula Cid Ornelas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Google Fonts - Raleway and Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Color palette derived from mountain image - matching homepage */
+      --primary-blue: #1a365d;     /* Deep blue from mountains */
+      --accent-blue: #4a87c9;      /* Sky blue accent */
+      --light-blue: #b3cce6;       /* Light blue for subtle elements */
+      --snow-white: #f5f7fa;       /* Off-white from snow */
+      --dark-overlay: rgba(12, 27, 51, 0.4); /* Dark blue with transparency */
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body, html {
+      height: 100%;
+      font-family: 'Montserrat', Arial, sans-serif;
+      scroll-behavior: smooth;
+      width: 100%;
+      overflow-x: hidden;
+      /* Apply background to the entire body */
+      background: url('nature-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    
+    h1, h2, h3, .nav-links a {
+      font-family: 'Raleway', Arial, sans-serif;
+      font-weight: 600;
+    }
+    
+    /* Full page overlay to darken the background image */
+    .page-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        135deg, 
+        rgba(12, 27, 51, 0.8) 0%, 
+        rgba(26, 54, 93, 0.7) 50%, 
+        rgba(12, 27, 51, 0.8) 100%
+      );
+      z-index: -1;
+    }
+    
+    /* Hero section - now just for layout, not for background */
+    .hero {
+      position: relative;
+      min-height: 60vh;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 30px 0;
+      width: 100%;
+    }
+    
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 90%;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+    
+    .profile-section {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+    
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid var(--snow-white);
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .profile-info h1 {
+      font-size: 2.2em;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .social-links {
+      display: flex;
+      list-style: none;
+      gap: 15px;
+      margin-bottom: 5px;
+    }
+    
+    .social-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--accent-blue);
+      transform: translateY(-2px);
+    }
+    
+    .nav-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      width: 100%;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2em;
+      padding: 8px 0;
+      position: relative;
+      transition: all 0.3s ease;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: white;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: var(--light-blue);
+      transform: translateY(-2px);
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    .content {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 8px;
+      padding: 40px;
+      color: #333;
+      margin: -60px auto 25px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      position: relative;
+      z-index: 10;
+      max-width: 1000px;
+    }
+    
+    .content h2 {
+      margin-bottom: 20px;
+      color: var(--primary-blue);
+      font-size: 1.8em;
+      border-bottom: 2px solid var(--primary-blue);
+      padding-bottom: 15px;
+      letter-spacing: 0.5px;
+    }
+    
+    .content h3 {
+      color: var(--primary-blue);
+      font-size: 1.5em;
+      margin: 35px 0 15px;
+    }
+    
+    .content p {
+      margin-bottom: 15px;
+      line-height: 1.7;
+      font-weight: 300;
+      letter-spacing: 0.3px;
+    }
+
+    /* Consistent bullet point styles */
+    .content ul {
+      margin-bottom: 20px;
+      padding-left: 25px;
+    }
+    
+    .content ul li {
+      margin-bottom: 12px;
+      line-height: 1.6;
+      position: relative;
+    }
+    
+    /* Card styles */
+    .info-card {
+      background-color: var(--snow-white);
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      margin: 25px 0;
+      border-left: 4px solid var(--accent-blue);
+    }
+
+    .info-card h3 {
+      margin-top: 0;
+      color: var(--primary-blue);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .info-card h3 i {
+      color: var(--accent-blue);
+    }
+
+    .info-card p {
+      margin-bottom: 15px;
+    }
+    
+    /* Table styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    thead {
+      background-color: var(--primary-blue);
+      color: white;
+    }
+    
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    
+    tbody tr:nth-child(even) {
+      background-color: var(--snow-white);
+    }
+    
+    tbody tr:hover {
+      background-color: var(--light-blue);
+    }
+
+    /* Comparison table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+    }
+    
+    .comparison-table th {
+      background-color: var(--primary-blue);
+      color: white;
+      padding: 15px;
+      text-align: left;
+    }
+    
+    .comparison-table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+    
+    .comparison-table tr:nth-child(even) {
+      background-color: var(--snow-white);
+    }
+    
+    /* Opinion groups */
+    .opinion-groups {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 25px 0;
+    }
+    
+    .opinion-card {
+      flex: 1;
+      min-width: 250px;
+      background-color: var(--snow-white);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .opinion-card.in-favor {
+      border-top: 3px solid #4caf50; /* Green */
+    }
+    
+    .opinion-card.against {
+      border-top: 3px solid #f44336; /* Red */
+    }
+    
+    .opinion-card h4 {
+      margin-top: 0;
+      font-size: 1.2em;
+      color: var(--primary-blue);
+      margin-bottom: 10px;
+      font-family: 'Raleway', Arial, sans-serif;
+    }
+    
+    .opinion-card ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    
+    .opinion-card ul li {
+      margin-bottom: 8px;
+    }
+    
+    /* Highlight box */
+    .highlight-box {
+      background-color: var(--light-blue);
+      border-left: 5px solid var(--accent-blue);
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 4px;
+    }
+    
+    .highlight-box h3 {
+      margin-top: 0;
+      color: var(--primary-blue);
+    }
+    
+    .highlight-box p:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* Quote box */
+    .quote-box {
+      font-style: italic;
+      padding: 20px;
+      background-color: var(--snow-white);
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      margin: 25px 0;
+      position: relative;
+    }
+    
+    .quote-box::before {
+      content: '"';
+      font-size: 4em;
+      font-family: Georgia, serif;
+      color: var(--accent-blue);
+      opacity: 0.3;
+      position: absolute;
+      left: 10px;
+      top: -10px;
+    }
+    
+    .quote-box p {
+      position: relative;
+      z-index: 1;
+      margin-left: 20px;
+    }
+    
+    .quote-box cite {
+      display: block;
+      font-style: normal;
+      font-weight: 600;
+      text-align: right;
+      margin-top: 10px;
+      color: var(--primary-blue);
+    }
+    
+    /* Solution box */
+    .solution-box {
+      background-color: #e8f5e9; /* Light green */
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      margin: 25px 0;
+      border-left: 4px solid #43a047; /* Green */
+    }
+    
+    .solution-box h3 {
+      margin-top: 0;
+      color: var(--primary-blue);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .solution-box h3 i {
+      color: #43a047; /* Green */
+    }
+    
+    /* Back to projects button */
+    .back-to-projects {
+      display: inline-block;
+      margin-top: 30px;
+      color: var(--primary-blue);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .back-to-projects i {
+      margin-right: 5px;
+      transition: transform 0.3s ease;
+    }
+    
+    .back-to-projects:hover {
+      color: var(--accent-blue);
+    }
+    
+    .back-to-projects:hover i {
+      transform: translateX(-3px);
+    }
+    
+    /* Footer styles */
+    footer {
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      background-color: var(--primary-blue);
+      color: var(--snow-white);
+      z-index: 2;
+      position: relative;
+      margin-top: 20px;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        max-width: 95%;
+      }
+      
+      .profile-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+      
+      .nav-links {
+        justify-content: center;
+      }
+      
+      .content {
+        padding: 25px;
+        margin-top: -40px;
+      }
+      
+      .opinion-groups {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Full page background overlay -->
+  <div class="page-overlay"></div>
+  
+  <!-- Hero section - now just for layout -->
+  <div class="hero">
+    <div class="container">
+      <div class="profile-section">
+        <img src="profile.jpg" alt="Paula Cid Ornelas" class="profile-pic">
+        
+        <div class="profile-info">
+          <h1>Paula Cid Ornelas</h1>
+          <ul class="social-links">
+            <li><a href="mailto:cidornelaspaula@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://www.linkedin.com/in/paulacidornelas"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="https://www.goodreads.com/user/show/70598345-paula-cid"><i class="fab fa-goodreads"></i> Goodreads</a></li>
+          </ul>
+          <p><i>Vancouver, Canada</i></p>
+        </div>
+      </div>
+      
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="presentations.html">Presentations</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="reading-list.html">Reading List</a></li>
+          <li><a href="about-me.html">About Me</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="content">
+    <h2>What's at Stake: 'Women-Only' Train Passenger Cars in Brazil</h2>
+    
+    <p>During my exchange term at UC Berkeley, I had the opportunity to reflect more deeply on equity in transportation. One issue that stood out to me was the proposal of "women-only" train passenger cars in Brazil — a measure that, while seemingly simple, reveals the complex tensions between safety, equity, and public policy.</p>
+    
+    <h3>The Environmental Issue: Transportation Equity</h3>
+    <p>Equity has significant importance in transportation. As Litman (2002) observes, "Equity refers to the fairness with which impacts (benefits and costs) are distributed." Transport projects may appear to benefit everyone equally, but men's and women's experiences with transport systems differ greatly, especially when it comes to safety and personal security.</p>
+    
+    <div class="info-card">
+      <h3><i class="fas fa-exclamation-triangle"></i> The Scale of the Problem</h3>
+      <p>According to a 2015 survey conducted in São Paulo by Datafolha, 35% of women said they had been sexually harassed while using public transportation.</p>
+      <p>One proposed solution, implemented in several countries including Brazil, is the controversial "women-only" passenger car. However, even among women, opinions on its effectiveness are divided.</p>
+    </div>
+    
+    <h3>Stakeholders and Special Interest Groups</h3>
+    <p>In Brazil, several politicians have supported the "women-only" passenger car, partly because it's a short-term measure that brings political visibility and doesn't require significant investment. On the other hand, most transit operators are against the idea. Brazil's subway systems are already overcrowded, especially during peak hours, and setting aside a dedicated car for women could worsen this. Additionally, enforcing the rule would require more station staff and operational costs.</p>
+    
+    <p>Beyond politicians and transport companies, it's important to consider what women themselves think. Interestingly, some women's groups affiliated with left-wing parties support the measure, while several autonomous feminist groups strongly oppose it.</p>
+    
+    <div class="opinion-groups">
+      <div class="opinion-card in-favor">
+        <h4>Groups in Favor <small>(e.g., Juntas, Movimento Mulheres em Luta)</small></h4>
+        <ul>
+          <li>Efficient and fast solution</li>
+          <li>Reduces harassment and sexual aggression</li>
+          <li>Increases safety and comfort for women</li>
+        </ul>
+      </div>
+      
+      <div class="opinion-card against">
+        <h4>Groups Against <small>(e.g., Marcha Mundial das Mulheres, Tática Feminista)</small></h4>
+        <ul>
+          <li>Increases gender segregation</li>
+          <li>Shifts blame to women in non-segregated cars</li>
+          <li>Doesn't address root causes of male violence</li>
+        </ul>
+      </div>
+    </div>
+    
+    <h3>The "Face-Off" and Common Ground</h3>
+    <p>As the comparison above shows, these groups diverge in their goals: improving immediate safety vs. addressing structural violence. On the one hand, creating a separate space for women doesn't solve the problem of sexual harassment, which is rooted in broader cultural norms.</p>
+    
+    <div class="quote-box">
+      <p>Investing in education and respect is essential to prevent not only violence in public transportation but in all spheres.</p>
+      <cite>Silva (2017)</cite>
+    </div>
+    
+    <p>On the other hand, cultural change takes time, and some action is necessary in the short term to reduce harm (Couto et al., 2019).</p>
+    
+    <p>Despite the disagreements, both sides recognize the urgency of the problem and want to improve conditions for women in public transit. A possible point of common ground could be a medium-term strategy that avoids isolating women while actively addressing aggressor behavior.</p>
+    
+    <div class="solution-box">
+      <h3><i class="fas fa-lightbulb"></i> Potential Solution: The Panic Button App</h3>
+      <p>One promising example is a "panic button" system implemented in the city of Fortaleza. Through a mobile app, victims can press a virtual button labeled "Report Sexual Harassment," enter the vehicle number and time, and the transit company will send footage from 30 minutes before and after the incident to the police. The video can then support a formal complaint.</p>
+      
+      <p><strong>For those who support "women-only" cars:</strong> The panic button is an alternative that increases safety without separating passengers. It also extends protection to stations and other parts of the journey.</p>
+      
+      <p><strong>For those who oppose segregation:</strong> The panic button offers a non-isolating strategy that focuses on accountability rather than avoidance. Still, it's not a perfect fix — women must remain alert, and systemic issues like overcrowding and lack of enforcement remain.</p>
+    </div>
+    
+    <h3>Final Thoughts</h3>
+    <p>This project was a chance to reflect on how complex transportation equity can be, especially when it comes to gender. Solutions that look simple often carry deeper social consequences. While "women-only" cars may provide a sense of safety for some, they risk reinforcing the idea that the burden is on women to avoid violence, rather than on society to prevent it.</p>
+    
+    <div class="highlight-box">
+      <h3>Key Takeaway</h3>
+      <p>Addressing this problem requires both short-term harm reduction and long-term cultural transformation. Strategies like the panic button may not be perfect, but they point toward a more inclusive, systemic approach to public safety — one that protects without isolating.</p>
+    </div>
+    
+    <a href="projects.html" class="back-to-projects"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+  </div>
+  
+  <footer>
+    &copy; 2025 Paula Cid Ornelas | All Rights Reserved
+  </footer>
+</body>
+</html>
