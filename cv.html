@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV | Paula Cid Ornelas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Google Fonts - Raleway and Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Color palette derived from mountain image - matching homepage */
+      --primary-blue: #1a365d;     /* Deep blue from mountains */
+      --accent-blue: #4a87c9;      /* Sky blue accent */
+      --light-blue: #b3cce6;       /* Light blue for subtle elements */
+      --snow-white: #f5f7fa;       /* Off-white from snow */
+      --dark-overlay: rgba(12, 27, 51, 0.4); /* Dark blue with transparency */
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body, html {
+      height: 100%;
+      font-family: 'Montserrat', Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    h1, h2, h3, .nav-links a {
+      font-family: 'Raleway', Arial, sans-serif;
+      font-weight: 600;
+    }
+    
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background: url('nature-background.jpg') no-repeat center center/cover;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 30px 0;
+    }
+    
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* Gradient overlay with deep blue from mountains - matching homepage */
+      background: linear-gradient(
+        135deg, 
+        rgba(12, 27, 51, 0.7) 0%, 
+        rgba(26, 54, 93, 0.5) 50%, 
+        rgba(12, 27, 51, 0.7) 100%
+      );
+      z-index: 1;
+    }
+    
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 90%;
+      width: 100%;
+      padding: 0;
+    }
+    
+    .profile-section {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+    
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid var(--snow-white);
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .profile-info h1 {
+      font-size: 2.2em;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .social-links {
+      display: flex;
+      list-style: none;
+      gap: 15px;
+      margin-bottom: 5px;
+    }
+    
+    .social-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--accent-blue);
+      transform: translateY(-2px);
+    }
+    
+    .nav-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      width: 100%;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2em;
+      padding: 8px 0;
+      position: relative;
+      transition: all 0.3s ease;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: white;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: var(--light-blue);
+      transform: translateY(-2px);
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    .content {
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 8px;
+      padding: 30px;
+      color: #333;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .content h2 {
+      margin-bottom: 20px;
+      color: var(--primary-blue);
+      font-size: 1.8em;
+      border-bottom: 2px solid var(--primary-blue);
+      padding-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+    
+    .content p {
+      margin-bottom: 15px;
+      line-height: 1.7;
+      font-weight: 300;
+      letter-spacing: 0.3px;
+    }
+    
+    /* CV Category Navigation */
+    .cv-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+    
+    .category-button {
+      padding: 10px 15px;
+      background-color: var(--snow-white);
+      color: var(--primary-blue);
+      border: none;
+      border-radius: 25px;
+      font-family: 'Raleway', Arial, sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .category-button:hover, .category-button.active {
+      background-color: var(--accent-blue);
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    /* CV Card Styles */
+    .cv-section {
+      margin-bottom: 40px;
+    }
+    
+    .section-title {
+      color: var(--primary-blue);
+      font-size: 1.4em;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .section-title i {
+      color: var(--accent-blue);
+    }
+    
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    
+    .cv-card {
+      background-color: var(--snow-white);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cv-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    
+    .cv-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background-color: var(--accent-blue);
+    }
+    
+    .card-header {
+      margin-bottom: 15px;
+    }
+    
+    .card-title {
+      font-size: 1.2em;
+      color: var(--primary-blue);
+      margin-bottom: 5px;
+    }
+    
+    .card-subtitle {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 600;
+      color: #666;
+      font-size: 0.95em;
+    }
+    
+    .card-date {
+      font-size: 0.85em;
+      color: #888;
+      margin-bottom: 10px;
+    }
+    
+    .card-content p {
+      font-size: 0.9em;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+    }
+    
+    .card-tag {
+      background-color: var(--light-blue);
+      color: var(--primary-blue);
+      padding: 3px 10px;
+      border-radius: 15px;
+      font-size: 0.75em;
+      font-weight: 600;
+    }
+    
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .skill-category {
+      margin-bottom: 20px;
+    }
+    
+    .skill-category h4 {
+      color: var(--primary-blue);
+      margin-bottom: 10px;
+      font-size: 1.1em;
+    }
+    
+    .skill-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    
+    .skill-bar {
+      width: 100%;
+      background-color: #ddd;
+      height: 8px;
+      border-radius: 4px;
+      margin-top: 5px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .skill-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: var(--accent-blue);
+      border-radius: 4px;
+    }
+    
+    .download-button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 25px;
+      background-color: var(--primary-blue);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+    
+    .download-button:hover {
+      background-color: var(--accent-blue);
+      transform: translateY(-2px);
+    }
+    
+    .publication-card {
+      background-color: var(--snow-white);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 25px;
+    }
+    
+    .publication-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    
+    .publication-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background-color: var(--accent-blue);
+    }
+    
+    .publication-title {
+      font-size: 1.1em;
+      color: var(--primary-blue);
+      margin-bottom: 10px;
+    }
+    
+    .publication-authors {
+      font-size: 0.9em;
+      margin-bottom: 5px;
+    }
+    
+    .publication-venue {
+      font-size: 0.85em;
+      font-style: italic;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    
+    footer {
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      background-color: var(--primary-blue);
+      color: var(--snow-white);
+      z-index: 2;
+      margin-top: 20px;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        max-width: 95%;
+      }
+      
+      .profile-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+      
+      .nav-links {
+        justify-content: center;
+      }
+      
+      .cards-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .skills-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="overlay"></div>
+    
+    <div class="container">
+      <div class="profile-section">
+        <img src="profile.jpg" alt="Paula Cid Ornelas" class="profile-pic">
+        
+        <div class="profile-info">
+          <h1>Paula Cid Ornelas</h1>
+          <ul class="social-links">
+            <li><a href="mailto:cidornelaspaula@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://www.linkedin.com/in/paulacidornelas"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="https://www.goodreads.com/user/show/70598345-paula-cid"><i class="fab fa-goodreads"></i> Goodreads</a></li>
+          </ul>
+          <p><i>Vancouver, Canada</i></p>
+        </div>
+      </div>
+      
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="presentations.html">Presentations</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="reading-list.html">Reading List</a></li>
+          <li><a href="about-me.html">About Me</a></li>
+        </ul>
+      </div>
+      
+      <div class="content">
+        <h2>Curriculum Vitae</h2>
+        
+        <p>Civil Engineering PhD student specializing in sustainable transportation infrastructure, with a focus on climate-informed pavement management systems. Combining technical expertise with policy insights to develop environmentally responsible transportation solutions.</p>
+        
+        <div class="cv-categories">
+          <button class="category-button active" onclick="filterCategory('all')">All</button>
+          <button class="category-button" onclick="filterCategory('education')">Education</button>
+          <button class="category-button" onclick="filterCategory('research')">Research</button>
+          <button class="category-button" onclick="filterCategory('publications')">Publications</button>
+          <button class="category-button" onclick="filterCategory('teaching')">Teaching</button>
+          <button class="category-button" onclick="filterCategory('skills')">Skills & Awards</button>
+        </div>
+        
+        <a href="#" class="download-button"><i class="fas fa-download"></i> Download Full CV (PDF)</a>
+        
+        <!-- Education Section -->
+        <div class="cv-section" id="education">
+          <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+          
+          <div class="cards-container">
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">PhD in Civil Engineering</h4>
+                <div class="card-subtitle">University of British Columbia, Canada</div>
+                <div class="card-date">September 2024 - Present</div>
+              </div>
+              <div class="card-content">
+                <p>Focus on sustainable transportation infrastructure and climate-informed pavement management systems.</p>
+                <div class="card-tags">
+                  <span class="card-tag">Transportation</span>
+                  <span class="card-tag">Pavements</span>
+                  <span class="card-tag">Environment</span>
+                  <span class="card-tag">Research</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Master of Applied Science in Civil Engineering</h4>
+                <div class="card-subtitle">University of British Columbia, Canada</div>
+                <div class="card-date">September 2022 - August 2024</div>
+              </div>
+              <div class="card-content">
+                <p>Specialization in Transportation Engineering</p>
+                <p>Thesis: "The effects of U.S. interstate spending on pavement condition and the environment"</p>
+                <p>GPA: 4.0/4.0</p>
+                <div class="card-tags">
+                  <span class="card-tag">Transportation</span>
+                  <span class="card-tag">Pavements</span>
+                  <span class="card-tag">Environment</span>
+                  <span class="card-tag">Research</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Bachelor of Science in Civil Engineering</h4>
+                <div class="card-subtitle">University of Brasília, Brazil</div>
+                <div class="card-date">January 2017 - May 2022</div>
+              </div>
+              <div class="card-content">
+                <p>Thesis: "Use of Fuzzy Techniques to Evaluate Smart Cities" (in Portuguese)</p>
+                <p>GPA: 4.6/5.0</p>
+                <div class="card-tags">
+                  <span class="card-tag">Fuzzy Logic</span>
+                  <span class="card-tag">Research</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Exchange Program</h4>
+                <div class="card-subtitle">University of California, Berkeley, USA</div>
+                <div class="card-date">January 2020 - May 2020</div>
+              </div>
+              <div class="card-content">
+                <p>Research Intern at Transportation Sustainability Research Center</p>
+                <p>GPA: 3.9/4.0</p>
+                <div class="card-tags">
+                  <span class="card-tag">Transportation</span>
+                  <span class="card-tag">Research</span>
+                </div>
+              </div>
+            </div>
+            
+        
+        <!-- Research Experience Section -->
+        <div class="cv-section" id="research">
+          <h3 class="section-title"><i class="fas fa-flask"></i> Research Experience</h3>
+          
+          <div class="cards-container">
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Graduate Research Assistant</h4>
+                <div class="card-subtitle">University of British Columbia, Canada</div>
+                <div class="card-date">September 2022 - Present</div>
+              </div>
+              <div class="card-content">
+                <p>Supervised by Dr. Amy Kim and Dr. Omar Swei.</p>
+                <p>Implemented a life cycle assessment (LCA) to evaluate the effects of infrastructure renewal spending on the environment and pavement conditions.</p>
+                <p>Developed a proportional hazard model to assess impacts of road infrastructure and weather characteristics on post-disaster recovery times in British Columbia.</p>
+                <p>Developing climate-informed models for sustainable pavement management.</p>
+                <div class="card-tags">
+                  <span class="card-tag">LCA</span>
+                  <span class="card-tag">Infrastructure</span>
+                  <span class="card-tag">Environment</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Undergraduate Research Assistant</h4>
+                <div class="card-subtitle">University of Brasília, Brazil</div>
+                <div class="card-date">August 2020 - May 2022</div>
+              </div>
+              <div class="card-content">
+                <p>Supervised by Dr. Francisco Evangelista.</p>
+                <p>Developed neural network models in Python to predict ultimate tensile strength and classify buckling type using geometric parameters.</p>
+                <p>Applied fuzzy logic in MATLAB to evaluate sustainability indicators in smart cities.</p>
+                <div class="card-tags">
+                  <span class="card-tag">Smart Cities</span>
+                  <span class="card-tag">Fuzzy Logic</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Undergraduate Research Intern</h4>
+                <div class="card-subtitle">Transportation Sustainability Research Center, UC Berkeley</div>
+                <div class="card-date">January 2020 - May 2020</div>
+              </div>
+              <div class="card-content">
+                <p>Investigated case studies about innovative shared micro mobility services and their impacts in Brazilian cities.</p>
+                <div class="card-tags">
+                  <span class="card-tag">Mobility</span>
+                  <span class="card-tag">Environment</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Publications Section -->
+        <div class="cv-section" id="publications">
+          <h3 class="section-title"><i class="fas fa-book"></i> Publications</h3>
+          
+          <div class="publication-card">
+            <h4 class="publication-title">Roadway Characteristics and Post-Disaster Highway Recovery</h4>
+            <p class="publication-authors">P. Cid Ornelas, A. Kim</p>
+            <p class="publication-venue">104th Transportation Research Board (TRB) Annual Meeting, 2025</p>
+          </div>
+          
+          <div class="publication-card">
+            <h4 class="publication-title">The Impact of Spatial Characteristics on the Duration of Hazard Disruptions in Transportation Networks</h4>
+            <p class="publication-authors">P. Cid Ornelas, A. Kim</p>
+            <p class="publication-venue">59th Canadian Transportation Research Forum (CTRF) Annual Meeting, 2024</p>
+          </div>
+          
+          <div class="publication-card">
+            <h4 class="publication-title">The Effects of Interstate Spending on Pavement Condition and the Environment</h4>
+            <p class="publication-authors">P. Cid Ornelas, J.M. del Campo Yañez, O. Swei</p>
+            <p class="publication-venue">103rd Transportation Research Board (TRB) Annual Meeting, 2024</p>
+          </div>
+          
+          <div class="publication-card">
+            <h4 class="publication-title">Ultimate Strength Optimization and Classification of Stiffened Panels Based on Artificial Neural Networks</h4>
+            <p class="publication-authors">J. P. S. Lima, P. C. Ornelas, and F. Evangelista Jr</p>
+            <p class="publication-venue">Joint XLII Ibero-Latin American Congress on Computational Methods in Engineering (XLII CILAMCE) and III Pan-American Congress on Computational Mechanics (III PANACM), 2021</p>
+          </div>
+          
+          <div class="publication-card">
+            <h4 class="publication-title">Identifying Resistance and Failure in Plates Using Machine Learning Techniques</h4>
+            <p class="publication-authors">P. C. Ornelas, and F. Evangelista Jr</p>
+            <p class="publication-venue">27th Undergraduate Research Conference of the University of Brasília and 18th Undergraduate Research Conference of the Federal District, 2021</p>
+          </div>
+        </div>
+        
+        <!-- Teaching Section -->
+        <div class="cv-section" id="teaching">
+          <h3 class="section-title"><i class="fas fa-chalkboard-teacher"></i> Teaching Experience</h3>
+          
+          <div class="cards-container">
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Teaching Assistant at UBC</h4>
+                <div class="card-subtitle">University of British Columbia, Canada</div>
+                <div class="card-date">January 2023 - Present</div>
+              </div>
+              <div class="card-content">
+                <p>CIVL 300 – Construction and Engineering Management | Dr. Fatima Alsakka | Spring 2025 (Head TA)</p>
+                <p>CIVL 230 – Solid Mechanics I | Dr. Shayan Fahimi | Fall 2024</p>
+                <p>CIVL 300 – Construction and Engineering Management | Dr. Omar Swei | Spring 2023 and 2024</p>
+                <p>CIVL 519 – Risk and Decision Analysis for Infrastructure Management | Dr. Omar Swei | Fall 2023</p>
+                <div class="card-tags">
+                  <span class="card-tag">Engineering</span>
+                  <span class="card-tag">Team Management</span>
+                  <span class="card-tag">Teaching</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Teaching Assistant at UnB</h4>
+                <div class="card-subtitle">University of Brasília, Brazil</div>
+                <div class="card-date">January 2018 - May 2022</div>
+              </div>
+              <div class="card-content">
+                <p>Operations Research | Dr. Reinaldo Garcia | Spring 2022</p>
+                <p>Structural Analysis | Dr. Lineu Pedroso | Spring and Fall 2021</p>
+                <p>Mechanics of Solids II | Dr. Francisco Evangelista | Fall 2020</p>
+                <p>Mechanics of Solids I | Dr. Rodrigo Lameiras | Spring 2019</p>
+                <p>Physics II | Professor Leonardo Sousa | Spring 2018</p>
+                <div class="card-tags">
+                  <span class="card-tag">Engineering</span>
+                  <span class="card-tag">Teaching</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Skills & Awards Section -->
+        <div class="cv-section" id="skills">
+          <h3 class="section-title"><i class="fas fa-award"></i> Skills & Awards</h3>
+          
+          <div class="cards-container">
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Technical Skills</h4>
+              </div>
+              <div class="card-content">
+                <p><strong>Programming:</strong> Python, R, MATLAB</p>
+                <p><strong>Software:</strong> AutoCAD, LaTeX</p>
+                <p><strong>Languages:</strong> Portuguese (native), English (fluent), French (intermediate)</p>
+                <div class="card-tags">
+                  <span class="card-tag">Programming</span>
+                  <span class="card-tag">Data Analysis</span>
+                  <span class="card-tag">Languages</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Awards & Recognition</h4>
+              </div>
+              <div class="card-content">
+                <p><strong>Outstanding Student Award:</strong> University of Brasília, 2022</p>
+                <p><strong>Honorable Mention Award:</strong> 27th Undergraduate Research Conference of the University of Brasília and 18th Undergraduate Research Conference of the Federal District, 2021</p>
+                <p><strong>CNPq Scholarship:</strong> Brazilian National Council for Scientific and Technological Development Scholarship for Undergraduate Research, 2020</p>
+                <div class="card-tags">
+                  <span class="card-tag">Academic Excellence</span>
+                  <span class="card-tag">Research</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Community Service & Outreach</h4>
+              </div>
+              <div class="card-content">
+                <p><strong>Brazilian Student Association (BRASA)</strong></p>
+                <p><strong>Outreach Manager:</strong> May 2023 - Aug 2024</p>
+                <p>Responsible for campaign planning, event organization, and partnership development, focusing on expanding the association's reach and ensuring financial viability.</p>
+                <p><strong>Communication and Content Analyst:</strong> Feb 2023 - May 2023</p>
+                <p>Collaborated with the marketing team to develop impactful campaigns, managed public relations efforts, and strategically amplified BRASA's initiatives and mentorship programs.</p>
+                <div class="card-tags">
+                  <span class="card-tag">Leadership</span>
+                  <span class="card-tag">Community</span>
+                </div>
