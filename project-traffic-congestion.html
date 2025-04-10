@@ -11,12 +11,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Color palette derived from mountain image - matching homepage */
-      --primary-blue: #1a365d;     /* Deep blue from mountains */
+      /* Color palette - adjusted to match the first page */
+      --primary-blue: #16355e;     /* Darker blue to match first page */
       --accent-blue: #4a87c9;      /* Sky blue accent */
       --light-blue: #b3cce6;       /* Light blue for subtle elements */
       --snow-white: #f5f7fa;       /* Off-white from snow */
-      --dark-overlay: rgba(12, 27, 51, 0.4); /* Dark blue with transparency */
+      --dark-overlay: rgba(12, 27, 51, 0.8); /* Darker overlay to match first page */
     }
     
     * {
@@ -31,9 +31,8 @@
       scroll-behavior: smooth;
       width: 100%;
       overflow-x: hidden;
-      /* Apply background to the entire body */
-      background: url('nature-background.jpg') no-repeat center center fixed;
-      background-size: cover;
+      /* Solid background color instead of image */
+      background-color: var(--primary-blue);
     }
     
     h1, h2, h3, .nav-links a {
@@ -41,26 +40,10 @@
       font-weight: 600;
     }
     
-    /* Full page overlay to darken the background image */
-    .page-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        135deg, 
-        rgba(12, 27, 51, 0.8) 0%, 
-        rgba(26, 54, 93, 0.7) 50%, 
-        rgba(12, 27, 51, 0.8) 100%
-      );
-      z-index: -1;
-    }
-    
-    /* Hero section - now just for layout, not for background */
+    /* Hero section - adjusted to match first page */
     .hero {
       position: relative;
-      min-height: 60vh;
+      min-height: 40vh; /* Reduced height to match first page */
       color: white;
       display: flex;
       justify-content: center;
@@ -72,8 +55,8 @@
     .container {
       position: relative;
       z-index: 2;
-      max-width: 90%;
-      width: 100%;
+      max-width: 1200px; /* Increased to match first page */
+      width: 90%;
       margin: 0 auto;
       padding: 0;
     }
@@ -129,8 +112,8 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      margin-top: 30px;
-      margin-bottom: 30px;
+      margin-top: 20px; /* Reduced to match first page */
+      margin-bottom: 20px; /* Reduced to match first page */
     }
     
     .nav-links {
@@ -178,11 +161,12 @@
       border-radius: 8px;
       padding: 40px;
       color: #333;
-      margin: -60px auto 25px;
+      margin: 40px auto 40px; /* Adjusted to match first page */
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       position: relative;
       z-index: 10;
-      max-width: 1000px;
+      max-width: 1200px; /* Increased to match first page */
+      width: 90%;
     }
     
     .content h2 {
@@ -430,7 +414,7 @@
       
       .content {
         padding: 25px;
-        margin-top: -40px;
+        margin-top: 40px; /* Fixed to be consistent */
       }
       
       .policy-cards {
@@ -440,10 +424,7 @@
   </style>
 </head>
 <body>
-  <!-- Full page background overlay -->
-  <div class="page-overlay"></div>
-  
-  <!-- Hero section - now just for layout -->
+  <!-- Hero section - simplified without background image and overlay -->
   <div class="hero">
     <div class="container">
       <div class="profile-section">
