@@ -191,34 +191,13 @@
       letter-spacing: 0.3px;
     }
     
-    /* CV Category Navigation */
-    .cv-categories {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 30px;
-      justify-content: center;
+    .elevator-pitch {
+      font-size: 1.1em;
+      line-height: 1.7;
+      margin-bottom: 25px;
     }
     
-    .category-button {
-      padding: 10px 15px;
-      background-color: var(--snow-white);
-      color: var(--primary-blue);
-      border: none;
-      border-radius: 25px;
-      font-family: 'Raleway', Arial, sans-serif;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .category-button:hover, .category-button.active {
-      background-color: var(--accent-blue);
-      color: white;
-      transform: translateY(-2px);
-    }
-    
-    /* Download Button - Fixed positioning */
+    /* Download Button */
     .download-button-container {
       display: flex;
       justify-content: center;
@@ -281,7 +260,7 @@
     
     .horizontal-cards::-webkit-scrollbar-thumb {
       background-color: var(--accent-blue);
-      border-radius:.4px;
+      border-radius: 4px;
     }
     
     .cv-card {
@@ -402,20 +381,195 @@
       margin-bottom: 10px;
     }
     
-    /* Skills Section */
-    .skills-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+    .publication-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    
+    .publication-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-size: 0.85em;
+      transition: all 0.3s ease;
+    }
+    
+    .publication-link:hover {
+      color: var(--primary-blue);
+    }
+    
+    /* Testimonial Cards */
+    .testimonial-container {
+      display: flex;
+      overflow-x: auto;
       gap: 20px;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-blue) var(--snow-white);
     }
     
-    /* Category Filtering */
-    .category-content {
-      display: none;
+    .testimonial-card {
+      min-width: 300px;
+      max-width: 400px;
+      background-color: var(--snow-white);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      flex: 0 0 auto;
     }
     
-    .category-content.active {
-      display: block;
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    
+    .testimonial-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background-color: var(--accent-blue);
+    }
+    
+    .testimonial-quote {
+      font-style: italic;
+      margin-bottom: 15px;
+      position: relative;
+      padding: 0 10px;
+    }
+    
+    .testimonial-quote::before {
+      content: '\201C';
+      font-size: 2em;
+      position: absolute;
+      left: -10px;
+      top: -10px;
+      color: var(--accent-blue);
+      opacity: 0.5;
+    }
+    
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--primary-blue);
+      margin-bottom: 5px;
+    }
+    
+    .testimonial-position {
+      font-size: 0.85em;
+      color: #777;
+    }
+    
+    /* Skill cards */
+    .skill-card {
+      min-width: 300px;
+      max-width: 400px;
+      background-color: var(--snow-white);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      flex: 0 0 auto;
+    }
+    
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background-color: var(--accent-blue);
+    }
+    
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    
+    .skill-category {
+      margin-bottom: 15px;
+    }
+    
+    .skill-category h4 {
+      color: var(--primary-blue);
+      margin-bottom: 10px;
+      font-size: 1.1em;
+    }
+    
+    .skill-item {
+      margin-bottom: 10px;
+    }
+    
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+    
+    .skill-name {
+      font-weight: 600;
+      font-size: 0.9em;
+    }
+    
+    .skill-level {
+      font-size: 0.8em;
+      color: #777;
+    }
+    
+    .skill-bar {
+      height: 6px;
+      background-color: var(--light-blue);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    
+    .skill-progress {
+      height: 100%;
+      background-color: var(--accent-blue);
+      border-radius: 3px;
+      transition: width 1s ease;
+    }
+    
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--primary-blue);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2em;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background-color: var(--accent-blue);
     }
     
     footer {
@@ -449,19 +603,18 @@
         justify-content: center;
       }
       
-      .horizontal-cards {
+      .horizontal-cards,
+      .testimonial-container {
         overflow-x: visible;
         flex-direction: column;
       }
       
-      .cv-card {
+      .cv-card,
+      .testimonial-card,
+      .skill-card {
         width: 100%;
         max-width: none;
         min-width: 0;
-      }
-      
-      .skills-container {
-        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -499,325 +652,356 @@
       <div class="content">
         <h2>Curriculum Vitae</h2>
         
-        <p>Civil Engineering PhD student specializing in sustainable transportation infrastructure, with a focus on climate-informed pavement management systems. Combining technical expertise with policy insights to develop environmentally responsible transportation solutions.</p>
-        
-        <div class="cv-categories">
-          <button class="category-button active" data-category="all">All</button>
-          <button class="category-button" data-category="education">Education</button>
-          <button class="category-button" data-category="research">Research</button>
-          <button class="category-button" data-category="publications">Publications</button>
-          <button class="category-button" data-category="teaching">Teaching</button>
-          <button class="category-button" data-category="skills">Skills & Awards</button>
-        </div>
+        <p class="elevator-pitch">I am a Civil Engineering PhD student researching climate-informed pavement management systems. I hope to develop economically viable, sustainable solutions that benefit all communities, especially those historically underrepresented. C</p>
         
         <!-- Download button in a centered container -->
         <div class="download-button-container">
           <a href="paulacidornelas_cv.pdf" class="download-button"><i class="fas fa-download"></i> Download Full CV (PDF)</a>
         </div>
         
-        <!-- All Category Content -->
-        <div id="all-content" class="category-content active">
-          <!-- Education Section - Horizontal -->
-          <div class="cv-section">
-            <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+        <!-- Education Section - Horizontal -->
+        <div class="cv-section">
+          <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+          
+          <div class="horizontal-cards">
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Doctor of Philosophy in Civil Engineering</h4>
+                <div class="card-subtitle">University of British Columbia, Canada</div>
+                <div class="card-date">September 2024 - Present</div>
+              </div>
+              <div class="card-content">
+                <p>Focus on sustainable transportation infrastructure and climate-informed pavement management systems.</p>
+                <div class="card-tags">
+                  <span class="card-tag">Transportation</span>
+                  <span class="card-tag">Pavements</span>
+                  <span class="card-tag">Environment</span>
+                  <span class="card-tag">Research</span>
+                </div>
+              </div>
+            </div>
             
-            <div class="horizontal-cards">
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Doctor of Philosophy in Civil Engineering</h4>
-                  <div class="card-subtitle">University of British Columbia, Canada</div>
-                  <div class="card-date">September 2024 - Present</div>
-                </div>
-                <div class="card-content">
-                  <p>Focus on sustainable transportation infrastructure and climate-informed pavement management systems.</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Transportation</span>
-                    <span class="card-tag">Pavements</span>
-                    <span class="card-tag">Environment</span>
-                    <span class="card-tag">Research</span>
-                  </div>
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Master of Applied Science in Civil Engineering</h4>
+                <div class="card-subtitle">University of British Columbia, Canada</div>
+                <div class="card-date">September 2022 - August 2024</div>
+              </div>
+              <div class="card-content">
+                <p>Specialization in Transportation Engineering</p>
+                <p>Thesis: "The effects of U.S. interstate spending on pavement condition and the environment"</p>
+                <p>GPA: 4.0/4.0</p>
+                <div class="card-tags">
+                  <span class="card-tag">Transportation</span>
+                  <span class="card-tag">Pavements</span>
+                  <span class="card-tag">Environment</span>
+                  <span class="card-tag">Research</span>
                 </div>
               </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Master of Applied Science in Civil Engineering</h4>
-                  <div class="card-subtitle">University of British Columbia, Canada</div>
-                  <div class="card-date">September 2022 - August 2024</div>
-                </div>
-                <div class="card-content">
-                  <p>Specialization in Transportation Engineering</p>
-                  <p>Thesis: "The effects of U.S. interstate spending on pavement condition and the environment"</p>
-                  <p>GPA: 4.0/4.0</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Transportation</span>
-                    <span class="card-tag">Pavements</span>
-                    <span class="card-tag">Environment</span>
-                    <span class="card-tag">Research</span>
-                  </div>
+            </div>
+            
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Bachelor of Science in Civil Engineering</h4>
+                <div class="card-subtitle">University of Brasília, Brazil</div>
+                <div class="card-date">January 2017 - May 2022</div>
+              </div>
+              <div class="card-content">
+                <p>Thesis: "Use of Fuzzy Techniques to Evaluate Smart Cities" (in Portuguese)</p>
+                <p>GPA: 4.6/5.0</p>
+                <div class="card-tags">
+                  <span class="card-tag">Fuzzy Logic</span>
+                  <span class="card-tag">Research</span>
                 </div>
               </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Bachelor of Science in Civil Engineering</h4>
-                  <div class="card-subtitle">University of Brasília, Brazil</div>
-                  <div class="card-date">January 2017 - May 2022</div>
-                </div>
-                <div class="card-content">
-                  <p>Thesis: "Use of Fuzzy Techniques to Evaluate Smart Cities" (in Portuguese)</p>
-                  <p>GPA: 4.6/5.0</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Fuzzy Logic</span>
-                    <span class="card-tag">Research</span>
-                  </div>
+            </div>
+            
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Exchange Program</h4>
+                <div class="card-subtitle">University of California, Berkeley, USA</div>
+                <div class="card-date">January 2020 - May 2020</div>
+              </div>
+              <div class="card-content">
+                <p>Research Intern at Transportation Sustainability Research Center</p>
+                <p>GPA: 3.9/4.0</p>
+                <div class="card-tags">
+                  <span class="card-tag">Transportation</span>
+                  <span class="card-tag">Research</span>
                 </div>
               </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Exchange Program</h4>
-                  <div class="card-subtitle">University of California, Berkeley, USA</div>
-                  <div class="card-date">January 2020 - May 2020</div>
-                </div>
-                <div class="card-content">
-                  <p>Research Intern at Transportation Sustainability Research Center</p>
-                  <p>GPA: 3.9/4.0</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Transportation</span>
-                    <span class="card-tag">Research</span>
-                  </div> transportation infrastructure and climate-informed pavement management systems.</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Transportation</span>
-                    <span class="card-tag">Pavements</span>
-                    <span class="card-tag">Environment</span>
-                    <span class="card-tag">Research</span>
-                  </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Research Experience Section -->
+        <div class="cv-section">
+          <h3 class="section-title"><i class="fas fa-flask"></i> Research Experience</h3>
+          
+          <div class="horizontal-cards">
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Graduate Research Assistant</h4>
+                <div class="card-subtitle">University of British Columbia, Canada</div>
+                <div class="card-date">September 2022 - Present</div>
+              </div>
+              <div class="card-content">
+                <p>Supervised by Dr. Amy Kim and Dr. Omar Swei.</p>
+                <p> Developing a climate-informed model for sustainable pavement management that balances asset condition and greenhouse gas emissions by optimizing maintenance and rehabilitation strategies under diverse climate scenarios.</p>
+                <p>Implemented a life cycle assessment (LCA) to evaluate the effects of infrastructure renewal spending on the environment and pavement conditions.</p>
+                <p>Developed a proportional hazard model to assess impacts of road infrastructure and weather characteristics on post-disaster recovery times in British Columbia.</p>
+                <div class="card-tags">
+                  <span class="card-tag">LCA</span>
+                  <span class="card-tag">Infrastructure</span>
+                  <span class="card-tag">Environment</span>
                 </div>
               </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Master of Applied Science in Civil Engineering</h4>
-                  <div class="card-subtitle">University of British Columbia, Canada</div>
-                  <div class="card-date">September 2022 - August 2024</div>
-                </div>
-                <div class="card-content">
-                  <p>Specialization in Transportation Engineering</p>
-                  <p>Thesis: "The effects of U.S. interstate spending on pavement condition and the environment"</p>
-                  <p>GPA: 4.0/4.0</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Transportation</span>
-                    <span class="card-tag">Pavements</span>
-                    <span class="card-tag">Environment</span>
-                    <span class="card-tag">Research</span>
-                  </div>
+            </div>
+            
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Undergraduate Research Assistant</h4>
+                <div class="card-subtitle">University of Brasília, Brazil</div>
+                <div class="card-date">August 2020 - May 2022</div>
+              </div>
+              <div class="card-content">
+                <p>Supervised by Dr. Francisco Evangelista.</p>
+                <p>Developed neural network models in Python to predict ultimate tensile strength and classify buckling type using geometric parameters.</p>
+                <p>Applied fuzzy logic in MATLAB to evaluate sustainability indicators in smart cities.</p>
+                <div class="card-tags">
+                  <span class="card-tag">Smart Cities</span>
+                  <span class="card-tag">Fuzzy Logic</span>
                 </div>
               </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Bachelor of Science in Civil Engineering</h4>
-                  <div class="card-subtitle">University of Brasília, Brazil</div>
-                  <div class="card-date">January 2017 - May 2022</div>
-                </div>
-                <div class="card-content">
-                  <p>Thesis: "Use of Fuzzy Techniques to Evaluate Smart Cities" (in Portuguese)</p>
-                  <p>GPA: 4.6/5.0</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Fuzzy Logic</span>
-                    <span class="card-tag">Research</span>
-                  </div>
+            </div>
+            
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Undergraduate Research Intern</h4>
+                <div class="card-subtitle">Transportation Sustainability Research Center, UC Berkeley</div>
+                <div class="card-date">January 2020 - May 2020</div>
+              </div>
+              <div class="card-content">
+                <p>Investigated case studies about innovative shared micro mobility services and their impacts in Brazilian cities.</p>
+                <div class="card-tags">
+                  <span class="card-tag">Mobility</span>
+                  <span class="card-tag">Environment</span>
                 </div>
               </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Exchange Program</h4>
-                  <div class="card-subtitle">University of California, Berkeley, USA</div>
-                  <div class="card-date">January 2020 - May 2020</div>
-                </div>
-                <div class="card-content">
-                  <p>Research Intern at Transportation Sustainability Research Center</p>
-                  <p>GPA: 3.9/4.0</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Transportation</span>
-                    <span class="card-tag">Research</span>
-                  </div>
-                </div>
-              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <!-- Publications Section -->
+        <div class="cv-section">
+          <h3 class="section-title"><i class="fas fa-book"></i> Publications</h3>
+          
+          <div class="publication-card">
+            <h4 class="publication-title">Roadway Characteristics and Post-Disaster Highway Recovery</h4>
+            <p class="publication-authors">P. Cid Ornelas, A. Kim</p>
+            <p class="publication-venue">104th Transportation Research Board (TRB) Annual Meeting, 2025</p>
+            <div class="publication-links">
+              <a href="https://trb-annual-meeting.nationalacademies.org/" class="publication-link"><i class="fas fa-external-link-alt"></i> Conference Website</a>
             </div>
           </div>
           
-          <!-- Research Experience Section - Horizontal -->
-          <div class="cv-section">
-            <h3 class="section-title"><i class="fas fa-flask"></i> Research Experience</h3>
-            
-            <div class="horizontal-cards">
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Graduate Research Assistant</h4>
-                  <div class="card-subtitle">University of British Columbia, Canada</div>
-                  <div class="card-date">September 2022 - Present</div>
-                </div>
-                <div class="card-content">
-                  <p>Supervised by Dr. Amy Kim and Dr. Omar Swei.</p>
-                  <p>Implemented a life cycle assessment (LCA) to evaluate the effects of infrastructure renewal spending on the environment and pavement conditions.</p>
-                  <p>Developed a proportional hazard model to assess impacts of road infrastructure and weather characteristics on post-disaster recovery times in British Columbia.</p>
-                  <div class="card-tags">
-                    <span class="card-tag">LCA</span>
-                    <span class="card-tag">Infrastructure</span>
-                    <span class="card-tag">Environment</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Undergraduate Research Assistant</h4>
-                  <div class="card-subtitle">University of Brasília, Brazil</div>
-                  <div class="card-date">August 2020 - May 2022</div>
-                </div>
-                <div class="card-content">
-                  <p>Supervised by Dr. Francisco Evangelista.</p>
-                  <p>Developed neural network models in Python to predict ultimate tensile strength and classify buckling type using geometric parameters.</p>
-                  <p>Applied fuzzy logic in MATLAB to evaluate sustainability indicators in smart cities.</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Smart Cities</span>
-                    <span class="card-tag">Fuzzy Logic</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Undergraduate Research Intern</h4>
-                  <div class="card-subtitle">Transportation Sustainability Research Center, UC Berkeley</div>
-                  <div class="card-date">January 2020 - May 2020</div>
-                </div>
-                <div class="card-content">
-                  <p>Investigated case studies about innovative shared micro mobility services and their impacts in Brazilian cities.</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Mobility</span>
-                    <span class="card-tag">Environment</span>
-                  </div>
-                </div>
-              </div>
+          <div class="publication-card">
+            <h4 class="publication-title">The Impact of Spatial Characteristics on the Duration of Hazard Disruptions in Transportation Networks</h4>
+            <p class="publication-authors">P. Cid Ornelas, A. Kim</p>
+            <p class="publication-venue">59th Canadian Transportation Research Forum (CTRF) Annual Meeting, 2024</p>
+            <div class="publication-links">
+              <a href="https://ctrf.ca/" class="publication-link"><i class="fas fa-external-link-alt"></i> Conference Website</a>
             </div>
           </div>
           
-          <!-- Publications Section -->
-          <div class="cv-section">
-            <h3 class="section-title"><i class="fas fa-book"></i> Publications</h3>
-            
-            <div class="publication-card">
-              <h4 class="publication-title">Roadway Characteristics and Post-Disaster Highway Recovery</h4>
-              <p class="publication-authors">P. Cid Ornelas, A. Kim</p>
-              <p class="publication-venue">104th Transportation Research Board (TRB) Annual Meeting, 2025</p>
-            </div>
-            
-            <div class="publication-card">
-              <h4 class="publication-title">The Impact of Spatial Characteristics on the Duration of Hazard Disruptions in Transportation Networks</h4>
-              <p class="publication-authors">P. Cid Ornelas, A. Kim</p>
-              <p class="publication-venue">59th Canadian Transportation Research Forum (CTRF) Annual Meeting, 2024</p>
-            </div>
-            
-            <div class="publication-card">
-              <h4 class="publication-title">The Effects of Interstate Spending on Pavement Condition and the Environment</h4>
-              <p class="publication-authors">P. Cid Ornelas, J.M. del Campo Yañez, O. Swei</p>
-              <p class="publication-venue">103rd Transportation Research Board (TRB) Annual Meeting, 2024</p>
+          <div class="publication-card">
+            <h4 class="publication-title">The Effects of Interstate Spending on Pavement Condition and the Environment</h4>
+            <p class="publication-authors">P. Cid Ornelas, J.M. del Campo Yañez, O. Swei</p>
+            <p class="publication-venue">103rd Transportation Research Board (TRB) Annual Meeting, 2024</p>
+            <div class="publication-links">
+              <a href="https://trb-annual-meeting.nationalacademies.org/" class="publication-link"><i class="fas fa-external-link-alt"></i> Conference Website</a>
             </div>
           </div>
+
+          <div class="publication-card">
+            <h4 class="publication-title">Ultimate Strength Optimization and Classification of Stiffened Panels Based on Artificial Neural Networks</h4>
+            <p class="publication-authors">J. P. S. Lima, P. C. Ornelas, F. Evangelista Jr</p>
+            <p class="publication-venue"> Joint XLII Ibero-Latin American Congress on Computational Methods in Engineering (XLII CILAMCE) and III Pan-American Congress on Computational Mechanics (III PANACM), 2021</p>
+            <div class="publication-links">
+            </div>
+          </div>
+
+          <div class="publication-card">
+            <h4 class="publication-title">Identifying Resistance and Failure in Plates Using Machine Learning Techniques (in Portuguese)</h4>
+            <p class="publication-authors"> P. C. Ornelas,  F. Evangelista Jr</p>
+            <p class="publication-venue"> 27th Undergraduate Research Conference of the University of Brasília and 18th Undergraduate Research Conference of the Federal District, 2021</p>
+            <div class="publication-links">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Teaching Section -->
+        <div class="cv-section">
+          <h3 class="section-title"><i class="fas fa-chalkboard-teacher"></i> Teaching Assistanship Experience</h3>
           
-          <!-- Teaching Section - Horizontal -->
-          <div class="cv-section">
-            <h3 class="section-title"><i class="fas fa-chalkboard-teacher"></i> Teaching Experience</h3>
-            
-            <div class="horizontal-cards">
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Teaching Assistant at UBC</h4>
-                  <div class="card-subtitle">University of British Columbia, Canada</div>
-                  <div class="card-date">January 2023 - Present</div>
-                </div>
-                <div class="card-content">
-                  <p>CIVL 300 – Construction and Engineering Management | Dr. Fatima Alsakka | Spring 2025 (Head TA)</p>
-                  <p>CIVL 230 – Solid Mechanics I | Dr. Shayan Fahimi | Fall 2024</p>
-                  <p>CIVL 300 – Construction and Engineering Management | Dr. Omar Swei | Spring 2023 and 2024</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Engineering</span>
-                    <span class="card-tag">Team Management</span>
-                    <span class="card-tag">Teaching</span>
-                  </div>
+          <div class="horizontal-cards">
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Teaching Assistant at UBC</h4>
+                <div class="card-subtitle">University of British Columbia, Canada</div>
+                <div class="card-date">January 2023 - Present</div>
+              </div>
+              <div class="card-content">
+                <p>CIVL 300 – Construction and Engineering Management | Dr. Fatima Alsakka | Spring 2025 (Head TA)</p>
+                <p>CIVL 230 – Solid Mechanics I | Dr. Shayan Fahimi | Fall 2024</p>
+                <p>CIVL 300 – Construction and Engineering Management | Dr. Omar Swei | Spring 2023 and 2024</p>
+                <p>CIVL 519 – Risk and Decision Analysis for Infrastructure Management  | Dr. Omar Swei | Fall 2023 </p>
+                <div class="card-tags">
+                  <span class="card-tag">Engineering</span>
+                  <span class="card-tag">Team Management</span>
+                  <span class="card-tag">Teaching</span>
                 </div>
               </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Teaching Assistant at UnB</h4>
-                  <div class="card-subtitle">University of Brasília, Brazil</div>
-                  <div class="card-date">January 2018 - May 2022</div>
-                </div>
-                <div class="card-content">
-                  <p>Operations Research | Dr. Reinaldo Garcia | Spring 2022</p>
-                  <p>Structural Analysis | Dr. Lineu Pedroso | Spring and Fall 2021</p>
-                  <p>Mechanics of Solids II | Dr. Francisco Evangelista | Fall 2020</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Engineering</span>
-                    <span class="card-tag">Teaching</span>
-                  </div>
+            </div>
+            
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Teaching Assistant at UnB</h4>
+                <div class="card-subtitle">University of Brasília, Brazil</div>
+                <div class="card-date">January 2018 - May 2022</div>
+              </div>
+              <div class="card-content">
+                <p>Operations Research | Dr. Reinaldo Garcia | Spring 2022</p>
+                <p>Structural Analysis | Dr. Lineu Pedroso | Spring and Fall 2021</p>
+                <p>Mechanics of Solids II | Dr. Francisco Evangelista | Fall 2020</p>
+                <p>Mechanics of Solids I | Dr. Rodrigo Lameiras | Spring 2019</p>
+                <p>Physics II | Professor Leonardo Sousa | Spring 2018</p>
+                <div class="card-tags">
+                  <span class="card-tag">Engineering</span>
+                  <span class="card-tag">Teaching</span>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        
+        <!-- Skills Section -->
+        <div class="cv-section">
+          <h3 class="section-title"><i class="fas fa-cogs"></i> Skills</h3>
           
-          <!-- Skills Section - Horizontal -->
-          <div class="cv-section">
-            <h3 class="section-title"><i class="fas fa-award"></i> Skills & Awards</h3>
+          <div class="horizontal-cards">
+            <div class="skill-card">
+              <div class="skill-category">
+                <h4>Programming & Software</h4>
+                
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Python</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%;"></div>
+                  </div>
+                </div>
+                
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">R</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%;"></div>
+                  </div>
+                </div>
+                
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">MATLAB</span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 50%;"></div>
+                  </div>
+                </div>
+                
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">QGis</span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 50%;"></div>
+                  </div>
+                </div>
+                
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">LaTeX</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
             
-            <div class="horizontal-cards">
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Technical Skills</h4>
+            <div class="skill-card">
+              <div class="skill-category">
+                <h4>Languages</h4>
+                
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Portuguese</span>
+                    <span class="skill-level">Native</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 100%;"></div>
+                  </div>
                 </div>
-                <div class="card-content">
-                  <p><strong>Programming:</strong> Python, R, MATLAB</p>
-                  <p><strong>Software:</strong> AutoCAD, LaTeX</p>
-                  <p><strong>Languages:</strong> Portuguese (native), English (fluent), French (intermediate)</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Programming</span>
-                    <span class="card-tag">Data Analysis</span>
-                    <span class="card-tag">Languages</span>
+                
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">English</span>
+                    <span class="skill-level">Fluent</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 95%;"></div>
+                  </div>
+                </div>
+                
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">French</span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 60%;"></div>
                   </div>
                 </div>
               </div>
               
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Awards & Recognition</h4>
-                </div>
-                <div class="card-content">
-                  <p><strong>Outstanding Student Award:</strong> University of Brasília, 2022</p>
-                  <p><strong>Honorable Mention Award:</strong> 27th Undergraduate Research Conference of the University of Brasília, 2021</p>
-                  <p><strong>CNPq Scholarship:</strong> Brazilian National Council for Scientific and Technological Development, 2020</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Academic Excellence</span>
-                    <span class="card-tag">Research</span>
+              <div class="skill-category">
+                <h4>Research Methods</h4>
+                
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Life Cycle Assessment</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%;"></div>
                   </div>
                 </div>
-              </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Community Service & Outreach</h4>
-                </div>
-                <div class="card-content">
-                  <p><strong>Brazilian Student Association (BRASA)</strong></p>
-                  <p><strong>Outreach Manager:</strong> May 2023 - Aug 2024</p>
-                  <p>Responsible for campaign planning, event organization, and partnership development.</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Leadership</span>
-                    <span class="card-tag">Community</span>
+                
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Statistical Modeling</span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%;"></div>
                   </div>
                 </div>
               </div>
@@ -825,262 +1009,109 @@
           </div>
         </div>
         
-        <!-- Education Category Content -->
-        <div id="education-content" class="category-content">
-          <div class="cv-section">
-            <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+        <!-- Awards Section -->
+        <div class="cv-section">
+          <h3 class="section-title"><i class="fas fa-award"></i> Awards & Recognition</h3>
+          
+          <div class="horizontal-cards">
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Outstanding Student Award</h4>
+                <div class="card-subtitle">University of Brasília, Brazil</div>
+                <div class="card-date">May 2022</div>
+              </div>
+              <div class="card-content">
+                <p>Awarded to the top-performing graduating student in the Civil Engineering program based on academic excellence.</p>
+              </div>
+            </div>
             
-            <div class="horizontal-cards">
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Doctor of Philosophy in Civil Engineering</h4>
-                  <div class="card-subtitle">University of British Columbia, Canada</div>
-                  <div class="card-date">September 2024 - Present</div>
-                </div>
-                <div class="card-content">
-                  <p>Focus on sustainable transportation infrastructure and climate-informed pavement management systems.</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Transportation</span>
-                    <span class="card-tag">Pavements</span>
-                    <span class="card-tag">Environment</span>
-                    <span class="card-tag">Research</span>
-                  </div>
-                </div>
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Honorable Mention Award</h4>
+                <div class="card-subtitle">27th Undergraduate Research Conference, University of Brasília</div>
+                <div class="card-date">November 2021</div>
               </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Master of Applied Science in Civil Engineering</h4>
-                  <div class="card-subtitle">University of British Columbia, Canada</div>
-                  <div class="card-date">September 2022 - August 2024</div>
-                </div>
-                <div class="card-content">
-                  <p>Specialization in Transportation Engineering</p>
-                  <p>Thesis: "The effects of U.S. interstate spending on pavement condition and the environment"</p>
-                  <p>GPA: 4.0/4.0</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Transportation</span>
-                    <span class="card-tag">Pavements</span>
-                    <span class="card-tag">Environment</span>
-                    <span class="card-tag">Research</span>
-                  </div>
-                </div>
+              <div class="card-content">
+                <p>Recognized for exceptional research presentation on identifying resistance and failure in plates using Machine Learning techniques.</p>
               </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Bachelor of Science in Civil Engineering</h4>
-                  <div class="card-subtitle">University of Brasília, Brazil</div>
-                  <div class="card-date">January 2017 - May 2022</div>
-                </div>
-                <div class="card-content">
-                  <p>Thesis: "Use of Fuzzy Techniques to Evaluate Smart Cities" (in Portuguese)</p>
-                  <p>GPA: 4.6/5.0</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Fuzzy Logic</span>
-                    <span class="card-tag">Research</span>
-                  </div>
-                </div>
+            </div>
+            
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">CNPq Scholarship</h4>
+                <div class="card-subtitle">Brazilian National Council for Scientific and Technological Development</div>
+                <div class="card-date">August 2020 - May 2022</div>
               </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Exchange Program</h4>
-                  <div class="card-subtitle">University of California, Berkeley, USA</div>
-                  <div class="card-date">January 2020 - May 2020</div>
-                </div>
-                <div class="card-content">
-                  <p>Research Intern at Transportation Sustainability Research Center</p>
-                  <p>GPA: 3.9/4.0</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Transportation</span>
-                    <span class="card-tag">Research</span>
-                  </div>
-                </div>
+              <div class="card-content">
+                <p>Merit-based research scholarship awarded to undergraduate students demonstrating exceptional research potential and academic performance.</p>
               </div>
             </div>
           </div>
         </div>
         
-        <!-- Research Category Content -->
-        <div id="research-content" class="category-content">
-          <div class="cv-section">
-            <h3 class="section-title"><i class="fas fa-flask"></i> Research Experience</h3>
-            
-            <div class="horizontal-cards">
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Graduate Research Assistant</h4>
-                  <div class="card-subtitle">University of British Columbia, Canada</div>
-                  <div class="card-date">September 2022 - Present</div>
-                </div>
-                <div class="card-content">
-                  <p>Supervised by Dr. Amy Kim and Dr. Omar Swei.</p>
-                  <p>Implemented a life cycle assessment (LCA) to evaluate the effects of infrastructure renewal spending on the environment and pavement conditions.</p>
-                  <p>Developed a proportional hazard model to assess impacts of road infrastructure and weather characteristics on post-disaster recovery times in British Columbia.</p>
-                  <div class="card-tags">
-                    <span class="card-tag">LCA</span>
-                    <span class="card-tag">Infrastructure</span>
-                    <span class="card-tag">Environment</span>
-                  </div>
-                </div>
+        <!-- Community Service Section -->
+        <div class="cv-section">
+          <h3 class="section-title"><i class="fas fa-users"></i> Community Service & Outreach</h3>
+          
+          <div class="horizontal-cards">
+            <div class="cv-card">
+              <div class="card-header">
+                <h4 class="card-title">Outreach Manager</h4>
+                <div class="card-subtitle">Brazilian Student Association (BRASA)</div>
+                <div class="card-date">May 2023 - Aug 2024</div>
               </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Undergraduate Research Assistant</h4>
-                  <div class="card-subtitle">University of Brasília, Brazil</div>
-                  <div class="card-date">August 2020 - May 2022</div>
-                </div>
-                <div class="card-content">
-                  <p>Supervised by Dr. Francisco Evangelista.</p>
-                  <p>Developed neural network models in Python to predict ultimate tensile strength and classify buckling type using geometric parameters.</p>
-                  <p>Applied fuzzy logic in MATLAB to evaluate sustainability indicators in smart cities.</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Smart Cities</span>
-                    <span class="card-tag">Fuzzy Logic</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Undergraduate Research Intern</h4>
-                  <div class="card-subtitle">Transportation Sustainability Research Center, UC Berkeley</div>
-                  <div class="card-date">January 2020 - May 2020</div>
-                </div>
-                <div class="card-content">
-                  <p>Investigated case studies about innovative shared micro mobility services and their impacts in Brazilian cities.</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Mobility</span>
-                    <span class="card-tag">Environment</span>
-                  </div>
+              <div class="card-content">
+                <p>BRASA is a student-led organization dedicated to empowering Brazilians through free mentorship programs and connecting a global network of members..</p>
+                <div class="card-tags">
+                  <span class="card-tag">Leadership</span>
+                  <span class="card-tag">Community</span>
+                  <span class="card-tag">Mentorship</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
-        <!-- Publications Category Content -->
-        <div id="publications-content" class="category-content">
-          <div class="cv-section">
-            <h3 class="section-title"><i class="fas fa-book"></i> Publications</h3>
-            
-            <div class="publication-card">
-              <h4 class="publication-title">Roadway Characteristics and Post-Disaster Highway Recovery</h4>
-              <p class="publication-authors">P. Cid Ornelas, A. Kim</p>
-              <p class="publication-venue">104th Transportation Research Board (TRB) Annual Meeting, 2025</p>
-            </div>
-            
-            <div class="publication-card">
-              <h4 class="publication-title">The Impact of Spatial Characteristics on the Duration of Hazard Disruptions in Transportation Networks</h4>
-              <p class="publication-authors">P. Cid Ornelas, A. Kim</p>
-              <p class="publication-venue">59th Canadian Transportation Research Forum (CTRF) Annual Meeting, 2024</p>
-            </div>
-            
-            <div class="publication-card">
-              <h4 class="publication-title">The Effects of Interstate Spending on Pavement Condition and the Environment</h4>
-              <p class="publication-authors">P. Cid Ornelas, J.M. del Campo Yañez, O. Swei</p>
-              <p class="publication-venue">103rd Transportation Research Board (TRB) Annual Meeting, 2024</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Teaching Category Content -->
-        <div id="teaching-content" class="category-content">
-          <div class="cv-section">
-            <h3 class="section-title"><i class="fas fa-chalkboard-teacher"></i> Teaching Experience</h3>
-            
-            <div class="horizontal-cards">
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Teaching Assistant at UBC</h4>
-                  <div class="card-subtitle">University of British Columbia, Canada</div>
-                  <div class="card-date">January 2023 - Present</div>
-                </div>
-                <div class="card-content">
-                  <p>CIVL 300 – Construction and Engineering Management | Dr. Fatima Alsakka | Spring 2025 (Head TA)</p>
-                  <p>CIVL 230 – Solid Mechanics I | Dr. Shayan Fahimi | Fall 2024</p>
-                  <p>CIVL 300 – Construction and Engineering Management | Dr. Omar Swei | Spring 2023 and 2024</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Engineering</span>
-                    <span class="card-tag">Team Management</span>
-                    <span class="card-tag">Teaching</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Teaching Assistant at UnB</h4>
-                  <div class="card-subtitle">University of Brasília, Brazil</div>
-                  <div class="card-date">January 2018 - May 2022</div>
-                </div>
-                <div class="card-content">
-                  <p>Operations Research | Dr. Reinaldo Garcia | Spring 2022</p>
-                  <p>Structural Analysis | Dr. Lineu Pedroso | Spring and Fall 2021</p>
-                  <p>Mechanics of Solids II | Dr. Francisco Evangelista | Fall 2020</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Engineering</span>
-                    <span class="card-tag">Teaching</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Skills Category Content -->
-        <div id="skills-content" class="category-content">
-          <div class="cv-section">
-            <h3 class="section-title"><i class="fas fa-award"></i> Skills & Awards</h3>
-            
-            <div class="horizontal-cards">
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Technical Skills</h4>
-                </div>
-                <div class="card-content">
-                  <p><strong>Programming:</strong> Python, R, MATLAB</p>
-                  <p><strong>Software:</strong> AutoCAD, LaTeX</p>
-                  <p><strong>Languages:</strong> Portuguese (native), English (fluent), French (intermediate)</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Programming</span>
-                    <span class="card-tag">Data Analysis</span>
-                    <span class="card-tag">Languages</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Awards & Recognition</h4>
-                </div>
-                <div class="card-content">
-                  <p><strong>Outstanding Student Award:</strong> University of Brasília, 2022</p>
-                  <p><strong>Honorable Mention Award:</strong> 27th Undergraduate Research Conference of the University of Brasília, 2021</p>
-                  <p><strong>CNPq Scholarship:</strong> Brazilian National Council for Scientific and Technological Development, 2020</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Academic Excellence</span>
-                    <span class="card-tag">Research</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="cv-card">
-                <div class="card-header">
-                  <h4 class="card-title">Community Service & Outreach</h4>
-                </div>
-                <div class="card-content">
-                  <p><strong>Brazilian Student Association (BRASA)</strong></p>
-                  <p><strong>Outreach Manager:</strong> May 2023 - Aug 2024</p>
-                  <p>Responsible for campaign planning, event organization, and partnership development.</p>
-                  <div class="card-tags">
-                    <span class="card-tag">Leadership</span>
-                    <span class="card-tag">Community</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+  
+  <footer>
+    <p>&copy; 2025 Paula Cid Ornelas | Last Updated: April 2025</p>
+  </footer>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Back to Top button functionality
+      const backToTopButton = document.getElementById('backToTop');
+      
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('visible');
+        } else {
+          backToTopButton.classList.remove('visible');
+        }
+      });
+      
+      backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+      
+      // Animate skill bars on page load
+      const skillBars = document.querySelectorAll('.skill-progress');
+      setTimeout(() => {
+        skillBars.forEach(bar => {
+          const width = bar.style.width;
+          bar.style.width = '0';
+          setTimeout(() => {
+            bar.style.width = width;
+          }, 300);
+        });
+      }, 500);
+    });
+  </script>
+</body>
+</html>
