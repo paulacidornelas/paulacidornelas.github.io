@@ -140,11 +140,12 @@ p {
 .nav-links {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Updated: prevent wrapping */
   gap: 25px;
   justify-content: center;
   width: 100%;
   margin-top: 10px;
+  white-space: nowrap; /* Added: prevent text wrapping */
 }
 
 .nav-links a {
